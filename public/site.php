@@ -1,6 +1,5 @@
 <?php
 
-
 require_once 'vendor/autoload.php';
 
 $viewFoolder = 'imobiliaria/views';

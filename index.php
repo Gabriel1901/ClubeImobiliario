@@ -1,7 +1,7 @@
 <?php
-//namespace ClubeImobiliario;
 
-//use ClubeImobiliario\imobiliaria\;
+
+
 
 function __autoload($classe)
 {

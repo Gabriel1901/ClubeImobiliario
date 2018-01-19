@@ -1,7 +1,5 @@
 <?php
 
-//namespace ClubeImobiliario\imobiliaria;
-
 require_once 'config.php';
 
 class SiteController {
@@ -20,7 +18,7 @@ class SiteController {
 
     public function email() {
 
-        include "views/email/emailProposta.php";
+        include "imobiliaria/views/email/emailProposta.php";
     }
 
     public function site() {
