@@ -72,8 +72,7 @@
 	background-color: #000000!important;
 }
 .panel-group .panel-default:first-child>.panel-heading {
-	border-top: 0!important;
-	background: #ffffff!important;
+	background-image: url("http://cdbclubeimobiliario.com.br/public/images/header.png");
 	color: #ff0000!important;
 	/* border-color: #bdbdbd!important; */
 	font-weight: 800!important;

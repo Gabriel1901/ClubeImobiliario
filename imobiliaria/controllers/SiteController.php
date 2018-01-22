@@ -4,12 +4,6 @@ require_once 'config.php';
 
 class SiteController {
 
-    public $img;
-
-    public function __construct() {
-        $this->img = new Config();
-    }
-
     public function index() {
 
 
@@ -22,7 +16,8 @@ class SiteController {
     }
 
     public function site() {
-        $img = $this->img->imgs();
+        
+        $img = img;
         include "public/site.php";
     }
 
