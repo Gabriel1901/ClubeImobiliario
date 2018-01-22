@@ -2,7 +2,7 @@
 
 require_once '../config.php';
 
-class AdmController {
+class PainelController {
 
     public function index() {
 

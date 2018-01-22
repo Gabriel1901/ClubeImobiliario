@@ -1,12 +1,5 @@
 <?php
-session_start();
 
-if (!(isset($_SESSION['usuario']) && $_SESSION['usuario'] == '2072525faf0effb700b7d896b7468ff2500ea1ac')) {
-
-    header("location: index.php");
-
-    exit;
-}
 require_once '../vendor/autoload.php';
 
 $viewFoolder = 'views';
@@ -18,6 +11,6 @@ $twig = new Twig_Environment($loader
         ]*/
         );
 
-print $twig->render('adm/index.twig', array(
+print $twig->render('login/index.twig', array(
             'img' => $img
 ));
