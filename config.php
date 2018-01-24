@@ -5,7 +5,6 @@ define('img', 'http://www.cdbclubeimobiliario.com.br/public/images/');
 
 
 
-
 /*
  * Banco de dados
  */

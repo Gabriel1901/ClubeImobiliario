@@ -12,5 +12,6 @@ $twig = new Twig_Environment($loader
         );
 
 print $twig->render('login/index.twig', array(
-            'img' => $img
+            'img' => img,
+            'route' => route
 ));

@@ -1,4 +1,6 @@
 nbproject/
 /app/
+adm/app/
 /vendor/
 config.php
+php.ini

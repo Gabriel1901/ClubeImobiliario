@@ -1,8 +1,6 @@
 <?php
 
 
-
-
 function __autoload($classe)
 {
     if (file_exists("imobiliaria/controllers/" . $classe . ".php")) {

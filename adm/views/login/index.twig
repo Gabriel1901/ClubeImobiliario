@@ -2,33 +2,96 @@
 
 {% block conteiner %}
 
-    <center><br><br><img src="{{ img }}logoClube.png" class="responsive"></center>
-        <div class="container">
-            <div class="card card-login mx-auto mt-5">
-                <div class="card-header">Painel Administrador</div>
-                <div class="card-body">
-		<form role="form" action="login&a=autenticar" method="POST">
-                        <div class="form-group">
-                            <label for="usuario">Usu&aacute;rio</label>
-                            <input class="form-control" id="user" type="name" aria-describedby="usuario" placeholder="Digite o usu&aacute;rio">
-                        </div>
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
-                            <input class="form-control" id="password" type="password" placeholder="Digite a Senha">
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox"> Lembrar Senha</label>
-                            </div>
-                        </div>
-                        <input type="submit" class="butom-custom" value="Fazer Login" />
-                    </form>
-                    <hr>
-                    <div class="text-center">
-                        <a class="butom-custom" href="index.php?route=login&a=recuperar" />Recuperar Dados ?</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+   <div class="container">
+    <div class="row vertical-offset-100">
+       <center><img src="{{img}}logoClube.png" class="responsive"></center>
+    	<div class="col-md-4 col-md-offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Painel Administrador</h3>
+			 	</div>
+			  	<div class="panel-body">
+                                        <p id="Retorno" class="form-custom-login hidden">...</p>
+                <form class="form" method="post">
+                    <fieldset>
+			    	  	<div id="user" class="form-group">
+                        <input class="form-control" id="user" type="text" name="usuario" aria-describedby="usuario" placeholder="Digite o usu&aacute;rio" />
+			    		</div>
+			    		<div class="form-group">
+                        <input class="form-control" id="password" name="senha" type="password" placeholder="Digite a Senha" />
+			    		</div>
+			    		<input class="btn btn-lg btn-danger btn-block" type="submit" value="Fazer Login">
+			    	</fieldset>
+			      	</form>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+
 {% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+
+        $(function () {
+            $("form").submit(function (event)
+            {
+                event.preventDefault();
+                var nomeEnviar = $("input#user").val();
+                var senhaEnviar = $("input#password").val();
+
+                if (nomeEnviar !== "" && nomeEnviar !== null && senhaEnviar !== "" && senhaEnviar !== null) {
+
+
+                    $.post("{{route}}login&a=autenticar", {user: nomeEnviar, password: senhaEnviar}, function (retorno) {
+
+
+                        if ( retorno ) {
+                            var json = JSON.parse(retorno);
+
+
+
+                            json.forEach(function (obj, idx) {
+
+                                $.post("{{route}}login&a=iniciarSessao", {user: nomeEnviar, password: senhaEnviar}, function (retorno) {
+
+                                });
+                                window.location = "{{route}}painel";
+
+                            });
+
+                        } else {
+
+
+                    
+                    $("#Retorno").html("Login ou Senha incorretos ");
+                    $("#Retorno").removeClass('hidden');
+
+                    $("#usu").focus(); //Da focu na input se ela não for digitada
+                    
+                        }
+
+
+
+                    });
+
+                    return 1;
+                }else{
+                    
+                     $("#Retorno").html("Preencha login e senha ");
+                    $("#Retorno").removeClass('hidden');
+
+                    $("#usu").focus(); //Da focu na input se ela não for digitada
+                    
+                }
+
+            });
+        });
+
+
+
+    </script>
+
+{% endblock %}
+
