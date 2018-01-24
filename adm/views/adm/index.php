@@ -1,5 +1,7 @@
 <?php
 
+
+
 require_once '../vendor/autoload.php';
 
 $viewFoolder = 'views';
@@ -12,5 +14,6 @@ $twig = new Twig_Environment($loader
         );
 
 print $twig->render('adm/index.twig', array(
-            'img' => $img
+            'img' => $img,
+    'user' => $_SESSION['user']
 ));

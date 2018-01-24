@@ -37,16 +37,24 @@ class LoginController {
         $senha = $_POST['password'];
         
        
-        $sessao = $this->usuarioModel->auth($usuario, $senha);
+        $sessao = $this->usuarioModel->auths($usuario, $senha);
+        $sessaos = $this->usuarioModel->auth($usuario, $senha);
  
-      
-    
+        
+        if($sessao){
+        session_start();
+
+            $_SESSION['usuario'] = '2072525faf0effb700b7d896b7468ff2500ea1ac';
+            $_SESSION['id'] = $sessao['0']['id'];
+            $_SESSION['user'] = $sessao['0']['usuario'];
+            
+        }
     }
     
-    public function iniciarSessao() {
+    public function iniciarSessao($sessao) {
         
         
-        
+       
             session_start();
 
             $_SESSION['usuario'] = '2072525faf0effb700b7d896b7468ff2500ea1ac';

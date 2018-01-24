@@ -33,11 +33,25 @@ class UsuarioModel {
 
       
         if ($dados) {
+            
             echo json_encode($dados);
         } else {
             
         }
         return;
+    }
+    public function auths($usuario, $senha) {
+
+
+        $sql = 'SELECT  id, usuario FROM '.db_p.'usuario where usuario = "' . $usuario . '" && senha ="' . $senha . '" && status = 1';
+
+
+        $get = $this->con->pdo()->prepare($sql);
+        $get->execute();
+        $dados = $get->fetchAll(PDO::FETCH_ASSOC);
+
+        
+        return $dados;
     }
 
 }

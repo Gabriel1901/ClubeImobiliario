@@ -4560,7 +4560,6 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 	color: inherit;
 }
 .panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a {
-	color: inherit;
 }
 .panel-footer {
 	padding: 10px 15px;

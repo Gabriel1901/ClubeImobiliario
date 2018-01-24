@@ -4,3 +4,6 @@ adm/app/
 /vendor/
 config.php
 php.ini
+/lib/
+public/painel/
+public/css/
