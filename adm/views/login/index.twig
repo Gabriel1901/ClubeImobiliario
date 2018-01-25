@@ -14,13 +14,14 @@
                         <p id="Retorno" class="form-custom-login hidden">...</p>
                         <form class="form" method="post">
                             <fieldset>
-                                <div id="user" class="form-group">
+                                <div class="form-group ">
                                     <input class="form-control" id="user" type="text" name="usuario" aria-describedby="usuario" placeholder="Digite o usu&aacute;rio" />
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group user">
                                     <input class="form-control" id="password" name="senha" type="password" placeholder="Digite a Senha" />
                                 </div>
-                                <input class="btn btn-lg btn-danger btn-block" type="submit" value="Fazer Login">
+                                <button class="btn btn-lg btn-danger btn-block" type="submit">Fazer Login</button>
+                                
                             </fieldset>
                         </form>
                     </div>
@@ -41,25 +42,17 @@
                 var nomeEnviar = $("input#user").val();
                 var senhaEnviar = $("input#password").val();
 
-                if (nomeEnviar !== "" && nomeEnviar !== null && senhaEnviar !== "" && senhaEnviar !== null) {
+                if ($("input").val() !== "" && $("input").val() !== null ) {
 
 
-                    $.post("{{route}}login&a=autenticar", {user: nomeEnviar, password: senhaEnviar}, function (retorno) {
+                    $.post("login&a=autenticar", {user: nomeEnviar, password: senhaEnviar}, function (retorno) {
 
                         if (retorno) {
-console.log(retorno);
-                            // var json = JSON.parse(retorno);
-
-
-
-                            //json.forEach(function (obj, idx) {
-
-                            // $.post("{{route}}login&a=iniciarSessao", {user: nomeEnviar, password: senhaEnviar}, function (retorn) {
-                            //  console.log(retorn);
-                            //});
+                          
+                           
                             window.location = "{{route}}painel";
 
-                            // });
+                      
                             return 1;
                         } else {
 
@@ -68,7 +61,8 @@ console.log(retorno);
                             $("#Retorno").html("Login ou Senha incorretos ");
                             $("#Retorno").removeClass('hidden');
 
-                            $("#usu").focus(); //Da focu na input se ela não for digitada
+                            $(".usu").addClass('has-error'); 
+                            $(".usu").focus(); //Da focu na input se ela não for digitada
 
                         }
 
@@ -81,10 +75,12 @@ console.log(retorno);
 
                     $("#Retorno").html("Preencha login e senha ");
                     $("#Retorno").removeClass('hidden');
-
+                    $("div#usu").addClass('bg-info');
                     $("#usu").focus(); //Da focu na input se ela não for digitada
 
                 }
+                 
+                
 
             });
         });

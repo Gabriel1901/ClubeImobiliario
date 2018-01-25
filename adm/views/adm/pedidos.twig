@@ -1,0 +1,127 @@
+{% extends "common/head-painel.twig" %}
+
+{% block conteiner %}
+<div id="content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div class="pull-right">
+                <button type="submit" id="button-shipping" form="form-order" formaction="#" formtarget="_blank" data-toggle="tooltip" title="" class="btn btn-info" disabled="" data-original-title="Imprimir lista de entregas"><i class="fa fa-truck"></i></button>
+                <button type="submit" id="button-invoice" form="form-order" formaction="#" formtarget="_blank" data-toggle="tooltip" title="" class="btn btn-info" disabled="" data-original-title="Imprimir fatura"><i class="fa fa-print"></i></button>
+                <a href="#" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Novo"><i class="fa fa-plus"></i></a>
+                <button type="button" id="button-delete" form="form-order" formaction="#" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Excluir"><i class="fa fa-trash-o"></i></button>
+            </div>
+            <h1>Painel do administrador</h1>
+            <ul class="breadcrumb">
+                <li><a href="#">Pedidos</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-list"></i> Listando pedidos</h3>
+            </div>
+            <div class="panel-body">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="control-label" for="input-order-id">Pedido nº</label>
+                                <input type="text" name="filter_order_id" value="" placeholder="Pedido nº" id="input-order-id" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="input-customer">Cliente</label>
+                                <input type="text" name="filter_customer" value="" placeholder="Cliente" id="input-customer" class="form-control" autocomplete="off">
+                                <ul class="dropdown-menu">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="control-label" for="input-order-status">Situação do pedido</label>
+                                <select name="filter_order_status" id="input-order-status" class="form-control">
+                                    <option value="*"></option>
+                                    <option value="0">Pedido abandonado</option>
+                                    <option value="16">Anulado</option>
+                                    <option value="7">Cancelado</option>
+                                    <option value="5">Completp</option>
+                                    <option value="11">Devolução</option>
+                                    <option value="2">Em processamento</option>
+                                    <option value="3">Enviado</option>
+                                    <option value="14">Expirado</option>
+                                    <option value="10">Falhou</option>
+                                    <option value="13">Incluso</option>
+                                    <option value="12">Invertido</option>
+                                    <option value="8">Negado</option>
+                                    <option value="1">Pendente</option>
+                                    <option value="15">Processado</option>
+                                    <option value="9">Reserva Cancelada</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="input-total">Total</label>
+                                <input type="text" name="filter_total" value="" placeholder="Total" id="input-total" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="control-label" for="input-date-added">Cadastro</label>
+                                <div class="input-group date">
+                                    <input type="text" name="filter_date_added" value="" placeholder="Cadastro" data-date-format="YYYY-MM-DD" id="input-date-added" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+                                    </span></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="input-date-modified">Modificação</label>
+                                <div class="input-group date">
+                                    <input type="text" name="filter_date_modified" value="" placeholder="Modificação" data-date-format="YYYY-MM-DD" id="input-date-modified" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+                                    </span></div>
+                            </div>
+                            <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-filter"></i> Filtrar</button>
+                        </div>
+                    </div>
+                </div>
+                <form method="post" action="" enctype="multipart/form-data" id="form-order">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></td>
+                                    <td class="text-right"><a class="asc">Pedido nº</a></td>
+                                    <td class="text-left"><a class="asc">Cliente</a></td>
+                                    <td class="text-left"><a class="asc">Situação</a></td>
+                                    <td class="text-right"><a class="asc">Total</a></td>
+                                    <td class="text-left"><a class="asc">Cadastro</a></td>
+                                    <td class="text-left"><a class="asc">Modificação</a></td>
+                                    <td class="text-right">Ação</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="selected[]" value="100">
+                                        <input type="hidden" name="shipping_code[]" value=""></td>
+                                    <td class="text-right">100</td>
+                                    <td class="text-left">fff fff</td>
+                                    <td class="text-left">Pendente</td>
+                                    <td class="text-right">R$3.000,00</td>
+                                    <td class="text-left">15/01/2018</td>
+                                    <td class="text-left">15/01/2018</td>
+                                    <td class="text-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="Exibir"><i class="fa fa-eye"></i></a> <a href="#" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">Exibindo de 1 a 23 do total de 23 (1 páginas)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %} 

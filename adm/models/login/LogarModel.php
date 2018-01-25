@@ -1,20 +1,27 @@
 <?php
 
+namespace adm\models\login;
+
+use adm\app\conexao\Conexao;
+
+use PDO;
 /*
- * Classe de usuarios.
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
 /**
- * Description of UsuarioModel
+ * Description of LogarModel
  *
  * @author Projeto
  */
-require_once '../app/conexao/Conexao.php';
-require_once 'config.php';
 
-class UsuarioModel {
+require_once 'autoload.php';
 
-    private $con;
+class LogarModel {
+    
+       private $con;
 
     public function __construct() {
 
@@ -52,5 +59,5 @@ class UsuarioModel {
         
         return $dados;
     }
-
+    
 }

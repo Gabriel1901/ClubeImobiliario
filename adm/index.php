@@ -1,5 +1,12 @@
 <?php
 
+namespace adm;
+
+use adm\controllers;
+
+require_once 'autoload.php';
+
+
 function __autoload($classe)
 {
     if (file_exists("controllers/" . $classe . ".php")) {
@@ -9,13 +16,16 @@ function __autoload($classe)
     }
 }
 
+if(isset($_GET['route']) && $_GET['route'] == 'painel'){
+    $prefixo = 'adm\controllers\P';
+}else{
+    $prefixo = 'adm\controllers\L';
+}
 
-    
-$controller = isset($_GET['route']) ? ucfirst($_GET['route']) . "Controller" : 'LoginController';
+$controller = isset($_GET['route']) ? $prefixo.substr(ucfirst($_GET['route']),1) . "Controller" : 'adm\controllers\LoginController';
 $action = isset($_GET['a']) ? ucfirst($_GET['a']) : "index";
 
-
-
+    
 if (class_exists($controller)) {
     $route = new $controller();
     if (method_exists($route, $action)) {
@@ -25,7 +35,7 @@ if (class_exists($controller)) {
         
     }
 } else {
+  
     print "Pagina naaaao encontrada";
    
 }      
- 

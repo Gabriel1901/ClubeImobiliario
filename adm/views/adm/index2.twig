@@ -1,0 +1,110 @@
+{% extends "common/head-painel.twig" %}
+
+{% block conteiner %}
+
+   
+<div id="container">
+            <header id="header" class="navbar navbar-static-top">
+                <div class="navbar-header"> <a type="button" id="button-menu" class="pull-left"><i class="fa fa-dedent fa-lg"></i></a> <a href="#" class="navbar-brand"><img src="http://www.cdbclubeimobiliario.com.br/public/images/logoClubePainel.png" alt="Painel CDB"></a></div>
+                <ul class="nav pull-right">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="label label-danger pull-left">944</span> <i class="fa fa-bell fa-lg"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-right alerts-dropdown">
+                            <li class="dropdown-header">Pedidos</li>
+                            <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=sale/order&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx&amp;filter_order_status=5,2,3,12,1" style="display: block; overflow: auto;"><span class="label label-warning pull-right">21</span>Processando</a></li>
+                            <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=sale/order&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx&amp;filter_order_status=5,3"><span class="label label-success pull-right">0</span>Finalizado</a></li>
+                            <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=sale/return&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx"><span class="label label-danger pull-right">2</span>Devolu&ccedil;&otilde;es</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Clientes</li>
+                            <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=report/customer_online&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx"><span class="label label-success pull-right">25</span>Online</a></li>
+                            <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=customer/customer&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx&amp;filter_approved=0"><span class="label label-danger pull-right">1</span>Aguardando aprova&ccedil;&atilde;o</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Produtos</li>
+                            <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=catalog/product&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx&amp;filter_quantity=0"><span class="label label-danger pull-right">940</span>Fora de estoque</a></li>
+                            <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=catalog/review&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx&amp;filter_status=0"><span class="label label-danger pull-right">0</span>Coment&aacute;rios</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Afiliados</li>
+                            <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=marketing/affiliate&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx&amp;filter_approved=1"><span class="label label-danger pull-right">1</span>Aguardando aprova&ccedil;&atilde;o</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-home fa-lg"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="dropdown-header">Sites</li>
+                            <li><a href="http://www.cdbclubeimobiliario.com.br/" target="_blank">Clube Imobiliario</a></li>
+                            <li><a href="http://www.casadosbanners.com.br/loja/" target="_blank">Casa dos Banners</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=common/logout&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx"><span class="hidden-xs hidden-sm hidden-md">Sair</span> <i class="fa fa-sign-out fa-lg"></i></a></li>
+                </ul>
+            </header>
+            <nav id="column-left" class="active">
+                <div id="profile">
+
+                    <div>
+                        <h4>{{user}}</h4>
+                        <small>{Cargo}</small></div>
+                </div>
+                <ul id="menu">
+                    <li id="menu-dashboard"> <a href="index.html"><i class="fa fa-dashboard fw"></i> <span>Painel de controle</span></a> </li>      
+                    <li id="menu-dashboard"> <a href="vendas.html"><i class="fa fa-shopping-cart fw"></i> <span>Vendas</span></a> </li>      
+                    <li id="menu-dashboard"> <a href="cat�logo.html"><i class="fa fa-tags fw"></i> <span>Cat&aacute;logo</span></a> </li>      
+                    <li id="menu-dashboard"> <a href="clientes.html"><i class="fa fa-user fw"></i> <span>Clientes</span></a> </li>      
+                    <li id="menu-dashboard"> <a href="marketing.html"><i class="fa fa-share-alt fw"></i> <span>Marketing</span></a> </li>      
+                    <li id="menu-dashboard"> <a href="configuracoes.html"><i class="fa fa-cog fw"></i> <span>Configura&ccedil;&otilde;es</span></a> </li>         
+                </ul>
+            </nav>
+            <div id="content">
+                <div class="page-header">
+                    <div class="container-fluid">
+                        <h1>Painel de controle</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="#">Principal</a></li>
+                            <li><a href="#">Painel de controle</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6">
+                            <div class="tile">
+                                <div class="tile-heading">Total de pedidos <span class="pull-right"> 0%</span></div>
+                                <div class="tile-body"><i class="fa fa-shopping-cart"></i>
+                                    <h2 class="pull-right">0</h2>
+                                </div>
+                                <div class="tile-footer"><a href="#">Ver mais...</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6">
+                            <div class="tile">
+                                <div class="tile-heading">Total vendido <span class="pull-right"> 0% </span></div>
+                                <div class="tile-body"><i class="fa fa-credit-card"></i>
+                                    <h2 class="pull-right">0</h2>
+                                </div>
+                                <div class="tile-footer"><a href="#">Ver mais...</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6">
+                            <div class="tile">
+                                <div class="tile-heading">Total de clientes <span class="pull-right"> 0%</span></div>
+                                <div class="tile-body"><i class="fa fa-user"></i>
+                                    <h2 class="pull-right">0</h2>
+                                </div>
+                                <div class="tile-footer"><a href="#">Ver mais...</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6">
+                            <div class="tile">
+                                <div class="tile-heading">Clientes online</div>
+                                <div class="tile-body"><i class="fa fa-users"></i>
+                                    <h2 class="pull-right">0</h2>
+                                </div>
+                                <div class="tile-footer"><a href="#">Ver mais...</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+{% endblock %}
+

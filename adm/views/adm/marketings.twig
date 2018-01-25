@@ -1,0 +1,77 @@
+{% extends "common/head-painel.twig" %}
+
+{% block conteiner %}
+<div id="content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <div class="pull-right"><a href="#" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Novo"><i class="fa fa-plus"></i></a>
+                <button type="button" data-toggle="tooltip" title="" class="btn btn-danger" onclick="confirm('Esta ação não pode ser desfeita! Tem certeza que deseja continuar?') ? $('#').submit() : false;" data-original-title="Excluir"><i class="fa fa-trash-o"></i></button>
+            </div>
+            <h1>Painel do administrador</h1>
+            <ul class="breadcrumb">
+                <li><a href="#">Marketing</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-list"></i> Listando campanhas</h3>
+            </div>
+            <div class="panel-body">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="input-name">Campanha</label>
+                                <input type="text" name="filter_name" value="" placeholder="Campanha" id="input-name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="input-code">Código de rastreio</label>
+                                <input type="text" name="filter_code" value="" placeholder="Código de rastreio" id="input-code" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="input-date-added">Cadastro</label>
+                                <div class="input-group date">
+                                    <input type="text" name="filter_date_added" value="" placeholder="Cadastro" data-date-format="YYYY-MM-DD" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+                                    </span></div>
+                            </div>
+                            <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-filter"></i> Filtrar</button>
+                        </div>
+                    </div>
+                </div>
+                <form action="http://www.casadosbanners.com.br/loja/admin/index.php?route=marketing/marketing/delete&amp;token=nrKzUkJJmlIxBzvR4C5tOJkYndhxRpnS" method="post" enctype="multipart/form-data" id="form-marketing">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></td>
+                                    <td class="text-left"><a class="asc">Campanha</a></td>
+                                    <td class="text-left"><a class="asc">Código de rastreio</a></td>
+                                    <td class="text-right">Cliques</td>
+                                    <td class="text-right">Pedidos</td>
+                                    <td class="text-left"><a class="asc">Cadastro</a></td>
+                                    <td class="text-right">Ação</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center" colspan="8">Sem resultados!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">Exibindo de 1 a 1 do total de (1 páginas)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

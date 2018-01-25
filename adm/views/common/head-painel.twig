@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-16">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="Clube Imobiliario">
@@ -17,13 +17,66 @@
         <script src="../public/painel/adm/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
         <link href="../public/painel/adm/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen">
         <link type="text/css" href="../public/painel/adm/view/stylesheet/stylesheet.css" rel="stylesheet" media="screen">
-        <script src="../public/painel/adm/view/javascript/common.js" type="text/javascript"></script
+        <script src="../public/painel/adm/view/javascript/common.js" type="text/javascript"></script>
     </head>
     <!--/head-->
     <body class="background-bg">
-
+<div id="container">
+  <header id="header" class="navbar navbar-static-top">
+    <div class="navbar-header"> <a type="button" id="button-menu" class="pull-left"><i class="fa fa-dedent fa-lg"></i></a> <a href="#" class="navbar-brand"><img src="http://www.cdbclubeimobiliario.com.br/public/images/logoClubePainel.png" alt="Painel CDB"></a></div>
+    <ul class="nav pull-right">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="label label-danger pull-left">944</span> <i class="fa fa-bell fa-lg"></i></a>
+        <ul class="dropdown-menu dropdown-menu-right alerts-dropdown">
+          <li class="dropdown-header">Pedidos</li>
+          <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=sale/order&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx&amp;filter_order_status=5,2,3,12,1" style="display: block; overflow: auto;"><span class="label label-warning pull-right">21</span>Processando</a></li>
+          <li class="dropdown-header">Clientes</li>
+          <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=customer/customer&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx&amp;filter_approved=0"><span class="label label-danger pull-right">1</span>Aguardando aprova&ccedil;&atilde;o</a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Produtos</li>
+          <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=catalog/review&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx&amp;filter_status=0"><span class="label label-danger pull-right">0</span>Coment&aacute;rios</a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Afiliados</li>
+          <li><a href="http://www.casadosbanners.com.br/loja/admin/index.php?route=marketing/affiliate&amp;token=iwVZ6FtVlrfrOVpUS1MKMkE1R3dNuZCx&amp;filter_approved=1"><span class="label label-danger pull-right">1</span>Aguardando aprova&ccedil;&atilde;o</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-home fa-lg"></i></a>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li class="dropdown-header">Sites</li>
+          <li><a href="{{reute}}" target="_blank">Clube Imobiliario</a></li>
+          <li><a href="http://www.casadosbanners.com.br/loja/" target="_blank">Casa dos Banners</a></li>
+        </ul>
+      </li>
+      <li><a href="login&a=deslogar"><span class="hidden-xs hidden-sm hidden-md">Sair</span> <i class="fa fa-sign-out fa-lg"></i></a></li>
+    </ul>
+  </header>
+  <nav id="column-left" class="active">
+    <div id="profile">
+      <div>
+        <h4>{{user}}</h4>
+        <small>{{cargo}}</small></div>
+    </div>
+    <ul id="menu">
+      <li id="menu-dashboard"> <a href="painel"><i class="fa fa-dashboard fw"></i> <span>Painel de controle</span></a> </li>
+      <li id="menu-dashboard"> <a class="parent"><i class="fa fa-shopping-cart fw"></i> <span>Vendas</span></a>
+        <ul class="collapse" aria-expanded="false" style="height: 0px;">
+          <li class="open"> <a href="painel&a=pedidos"><span>Pedidos</span></a> </li>
+        </ul>
+      </li>
+      <li id="menu-dashboard"> <a class="parent"><i class="fa fa-tags fw"></i> <span>Cat&aacute;logo</span></a>
+        <ul class="collapse" aria-expanded="false" style="height: 0px;">
+          <li class="open"> <a href="painel&a=departamentos"><span>Departamento</span></a> </li>
+          <li class="open"> <a href="painel&a=produtos"><span>Produtos</span></a> </li>
+        </ul>
+      </li>
+      <li id="menu-dashboard"> <a href="painel&a=clientes"><i class="fa fa-user fw"></i> <span>Clientes</span></a> </li>
+      <li id="menu-dashboard"> <a href="painel&a=marketings"><i class="fa fa-share-alt fw"></i> <span>Marketing</span></a> </li>
+      <li id="menu-dashboard"> <a href="painel&a=configuracoes"><i class="fa fa-cog fw"></i> <span>Configura&ccedil;&otilde;es</span></a> </li>
+    </ul>
+  </nav>
     {% block conteiner %}{% endblock %}
 
+  
+</div>
 <footer class="slider-custom">
 
 </footer>

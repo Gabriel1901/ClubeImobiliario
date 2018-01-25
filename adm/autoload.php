@@ -1,6 +1,8 @@
 <?php
+
 function carregaClasses($nomeClasse)
 {
+
     $namespace = explode('\\', $nomeClasse);
     
  
@@ -12,8 +14,8 @@ function carregaClasses($nomeClasse)
   
     $novo = implode('/', $namespace);
    $novo .= ".php";
-   
    require_once __DIR__."/".$novo;
+   
     
 }
 

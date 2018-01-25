@@ -1,6 +1,8 @@
 <?php
 
-require_once 'config.php';
+namespace adm\controllers;
+
+use adm;
 
 session_start();
 
@@ -11,21 +13,66 @@ if (!(isset($_SESSION['usuario']) && $_SESSION['usuario'] == '2072525faf0effb700
     exit;
 }
 
-//require_once 'autoload.php';
+require_once 'autoload.php';
+require_once 'config.php';
 
 class PainelController {
 
+    private $indexPage = "../public/index.php";
+
     public function index() {
 
-
-        $this->site();
+        $this->adm();
     }
 
-    public function site() {
+    public function adm() {
+
+        $img = img;
+  
         
         
-         $img = img;
-        include "views/adm/index.php";
+        $page = 'adm/index.twig';
+        include $this->indexPage;
+    }
+
+    public function pedidos() {
+
+
+        $page = 'adm/pedidos.twig';
+        include $this->indexPage;
+    }
+
+    public function departamentos() {
+
+
+
+        $page = 'adm/departamentos.twig';
+        include $this->indexPage;
+    }
+
+    public function produtos() {
+
+
+        $page = 'adm/produtos.twig';
+        include $this->indexPage;
+    }
+
+    public function clientes() {
+
+        $page = 'adm/clientes.twig';
+        include $this->indexPage;
+    }
+
+    public function marketings() {
+
+        $page = 'adm/marketings.twig';
+        include $this->indexPage;
+    }
+
+    public function configuracoes() {
+
+        $page = 'adm/configuracoes.twig';
+        include $this->indexPage;
     }
 
 }
