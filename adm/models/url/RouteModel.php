@@ -26,8 +26,11 @@ class RouteModel extends Route {
         
         $url = $this->getUrl($urls);
         $action = $this->loadUrl($url);
+        $route = $action[0];
         
-        return $action[0];
+        $page = $route['route'];
+        
+        include "../public/index.php";
         
          
     }

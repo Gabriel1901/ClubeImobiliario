@@ -42,98 +42,69 @@ class PainelController extends adm\app\page\Route {
         $url = $this->url->GetRoute($_GET['route']);
         
         
-        $page = $url['route'] . '/index';
-
-
-        include $this->indexPage;
     }
 
     public function pedidos() {
-        $url = $this->url->GetRoute($_GET['route']);
-        $page = $url['route'];
-        include $this->indexPage;
+       $url = $this->url->GetRoute($_GET['route']);
     }
 
     public function departamentos() {
 
 
         $url = $this->url->GetRoute($_GET['route']);
-        
-        $page = $url['route'];
-        include $this->indexPage;
     }
 
     public function produtos() {
 
 
         $url = $this->url->GetRoute($_GET['route']);
-        $page = $url['route'];
-        include $this->indexPage;
     }
 
     public function clientes() {
 
       
-        
-        
         $teste = $this->clientes->selectAllClientes();
 
 
         $url = $this->url->GetRoute($_GET['route']);
-        $page = $url['route'];
-        include $this->indexPage;
     }
 
     public function marketing() {
 
 
         $url = $this->url->GetRoute($_GET['route']);
-        $page = $url['route'];
-        include $this->indexPage;
     }
 
     public function configuracoes() {
 
         $url = $this->url->GetRoute($_GET['route']);
-        $page = $url['route'];
-        include $this->indexPage;
     }
 
     //PAGINAS EDITAR
 
     public function editarDepartamentos() {
 
-        $url = $this->url->GetRoute($_GET['route']);
-        $page = $url['route'];
-        include $this->indexPage;
+       $url = $this->url->GetRoute($_GET['route']);
     }
 
     public function editarProdutos() {
 
-        $url = $this->url->GetRoute($_GET['route']);
-        $page = $url['route'];
-        include $this->indexPage;
+       $url = $this->url->GetRoute($_GET['route']);
     }
 
     public function editarMarketings() {
 
         $url = $this->url->GetRoute($_GET['route']);
-        $page = $url['route'];
-        include $this->indexPage;
     }
 
     public function editarClientes() {
 
         $url = $this->url->GetRoute($_GET['route']);
-        $page = $url['route'];
-        include $this->indexPage;
     }
 
     public function editarPedidos() {
 
         $url = $this->url->GetRoute($_GET['route']);
-        $page = $url['route'];
-        include $this->indexPage;
     }
 
 }
