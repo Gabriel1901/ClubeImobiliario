@@ -50,7 +50,7 @@ class LogarModel {
     public function auths($usuario, $senha) {
 
 
-        $sql = 'SELECT  id, usuario FROM '.db_p.'usuario where usuario = "' . $usuario . '" && senha ="' . $senha . '" && status = 1';
+        $sql = 'SELECT  usuario_id, usuario FROM '.db_p.'usuario where usuario = "' . $usuario . '" && senha ="' . $senha . '" && status = 1';
         
         $get = $this->con->pdo()->prepare($sql);
         $get->execute();

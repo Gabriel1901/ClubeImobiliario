@@ -16,14 +16,10 @@ function __autoload($classe)
     }
 }
 
-if(isset($_GET['route']) && $_GET['route'] == 'painel'){
-    $prefixo = 'adm\controllers\P';
-}else{
-    $prefixo = 'adm\controllers\L';
-}
+$rota = isset( $_GET['route'])? explode("/", $_GET['route']) : "";
 
-$controller = isset($_GET['route']) ? $prefixo.substr(ucfirst($_GET['route']),1) . "Controller" : 'adm\controllers\LoginController';
-$action = isset($_GET['a']) ? ucfirst($_GET['a']) : "index";
+$controller = isset($rota[0]) ? "adm\controllers\\".ucfirst($rota[0]) . "Controller" : 'adm\controllers\LoginController';
+$action = isset($rota[1]) && $rota[1] !== "" ? ucfirst($rota[1]) : "index";
 
     
 if (class_exists($controller)) {

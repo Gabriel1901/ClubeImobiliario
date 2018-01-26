@@ -31,7 +31,7 @@ class LoginController {
 
     public function logar() {
         $img = img;
-        $page = 'login/index.twig';
+        $page = 'login/index';
         include $this->indexPage;
     }
 
@@ -60,7 +60,7 @@ class LoginController {
 
         session_destroy();
 
-        header("location: index.php?c=login");
+        header("location: index");
     }
 
 }

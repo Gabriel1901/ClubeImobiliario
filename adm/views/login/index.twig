@@ -45,7 +45,7 @@
                 if ($("input").val() !== "" && $("input").val() !== null ) {
 
 
-                    $.post("login&a=autenticar", {user: nomeEnviar, password: senhaEnviar}, function (retorno) {
+                    $.post("login/autenticar", {user: nomeEnviar, password: senhaEnviar}, function (retorno) {
 
                         if (retorno) {
                           

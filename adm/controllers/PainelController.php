@@ -3,6 +3,8 @@
 namespace adm\controllers;
 
 use adm;
+use adm\models\clientes\ClientesModel;
+use adm\models\url\RouteModel;
 
 session_start();
 
@@ -16,62 +18,121 @@ if (!(isset($_SESSION['usuario']) && $_SESSION['usuario'] == '2072525faf0effb700
 require_once 'autoload.php';
 require_once 'config.php';
 
-class PainelController {
+class PainelController extends adm\app\page\Route {
 
     private $indexPage = "../public/index.php";
+    private $clientes;
+    private $url;
+
+    public function __construct() {
+
+        $this->clientes = new ClientesModel();
+        $this->url = new RouteModel();
+    }
 
     public function index() {
 
-        $this->adm();
+        $this->painel();
     }
 
-    public function adm() {
+//PAGINAS DE NAVEGA��O
 
-        $img = img;
-  
+    public function painel() {
+
+        $url = $this->url->GetRoute($_GET['route']);
         
         
-        $page = 'adm/index.twig';
+        $page = $url['route'] . '/index';
+
+
         include $this->indexPage;
     }
 
     public function pedidos() {
-
-
-        $page = 'adm/pedidos.twig';
+        $url = $this->url->GetRoute($_GET['route']);
+        $page = $url['route'];
         include $this->indexPage;
     }
 
     public function departamentos() {
 
 
-
-        $page = 'adm/departamentos.twig';
+        $url = $this->url->GetRoute($_GET['route']);
+        
+        $page = $url['route'];
         include $this->indexPage;
     }
 
     public function produtos() {
 
 
-        $page = 'adm/produtos.twig';
+        $url = $this->url->GetRoute($_GET['route']);
+        $page = $url['route'];
         include $this->indexPage;
     }
 
     public function clientes() {
 
-        $page = 'adm/clientes.twig';
+      
+        
+        
+        $teste = $this->clientes->selectAllClientes();
+
+
+        $url = $this->url->GetRoute($_GET['route']);
+        $page = $url['route'];
         include $this->indexPage;
     }
 
-    public function marketings() {
+    public function marketing() {
 
-        $page = 'adm/marketings.twig';
+
+        $url = $this->url->GetRoute($_GET['route']);
+        $page = $url['route'];
         include $this->indexPage;
     }
 
     public function configuracoes() {
 
-        $page = 'adm/configuracoes.twig';
+        $url = $this->url->GetRoute($_GET['route']);
+        $page = $url['route'];
+        include $this->indexPage;
+    }
+
+    //PAGINAS EDITAR
+
+    public function editarDepartamentos() {
+
+        $url = $this->url->GetRoute($_GET['route']);
+        $page = $url['route'];
+        include $this->indexPage;
+    }
+
+    public function editarProdutos() {
+
+        $url = $this->url->GetRoute($_GET['route']);
+        $page = $url['route'];
+        include $this->indexPage;
+    }
+
+    public function editarMarketings() {
+
+        $url = $this->url->GetRoute($_GET['route']);
+        $page = $url['route'];
+        include $this->indexPage;
+    }
+
+    public function editarClientes() {
+
+        $url = $this->url->GetRoute($_GET['route']);
+        $page = $url['route'];
+        include $this->indexPage;
+    }
+
+    public function editarPedidos() {
+
+        $url = $this->url->GetRoute($_GET['route']);
+        $page = $url['route'];
         include $this->indexPage;
     }
 

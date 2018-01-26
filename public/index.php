@@ -2,6 +2,8 @@
 
 require_once '../vendor/autoload.php';
 
+
+
 $viewFoolder = 'views';
 
 $loader = new Twig_Loader_Filesystem($viewFoolder);
@@ -11,9 +13,11 @@ $twig = new Twig_Environment($loader
           ] */
 );
 
-print $twig->render($page, array(
+print $twig->render($page . '.twig', array(
             'user' => isset($_SESSION['user']) ? $_SESSION['user'] : "",
+            'namePage' => isset($url['name']) ? $url['name'] : "",
             'img' => img,
             'route' => route,
-            'end' => end
+            'end' => end,
+            
 ));
