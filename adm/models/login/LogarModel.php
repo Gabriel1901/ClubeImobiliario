@@ -31,14 +31,14 @@ class LogarModel {
     public function auth($usuario, $senha) {
 
 
-        $sql = 'SELECT senha, usuario FROM '.db_p.'usuario where usuario = "' . $usuario . '" && senha ="' . $senha . '" && status = 1';
+        $sql = 'SELECT senha, usuario FROM '.db_p.'usuarios where usuario = "' . $usuario . '" && senha ="' . $senha . '" && status = 1';
 
 
         $get = $this->con->pdo()->prepare($sql);
         $get->execute();
         $dados = $get->fetchAll(PDO::FETCH_ASSOC);
 
-      
+     
         if ($dados) {
             
             echo json_encode($dados);
@@ -50,7 +50,13 @@ class LogarModel {
     public function auths($usuario, $senha) {
 
 
-        $sql = 'SELECT  usuario_id, usuario FROM '.db_p.'usuario where usuario = "' . $usuario . '" && senha ="' . $senha . '" && status = 1';
+        $sql = 'SELECT 
+    usuario_id, usuario, cat.nome as categoria
+    
+FROM
+    cdb_usuarios usu
+        LEFT JOIN
+    cdb_usuarios_categoria cat ON cat.usuario_categoria_id = usu.id_categoria where usuario = "' . $usuario . '" && senha ="' . $senha . '" && usu.status = 1';
         
         $get = $this->con->pdo()->prepare($sql);
         $get->execute();

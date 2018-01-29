@@ -21,9 +21,9 @@
   body {
     background: #fff;
     font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 22px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
     color: #000;
     overflow-x: hidden !important;
   }
@@ -35,11 +35,13 @@
 
   a{
     color:#C03035;
+    font-weight: 800 !important;
   }
 
   a:hover {
     outline: none;
     color:#C03035;
+    font-weight: 800!important;
   }
 
   a:focus {

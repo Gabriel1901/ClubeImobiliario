@@ -43,15 +43,18 @@ class LoginController {
 
 
         $sessao = $this->usuarioModel->auths($usuario, $senha);
+        
         $sessaos = $this->usuarioModel->auth($usuario, $senha);
 
+        
 
         if ($sessao) {
             session_start();
 
             $_SESSION['usuario'] = '2072525faf0effb700b7d896b7468ff2500ea1ac';
-            $_SESSION['id'] = $sessao['0']['id'];
+            $_SESSION['id'] = $sessao['0']['usuario_id'];
             $_SESSION['user'] = $sessao['0']['usuario'];
+            $_SESSION['cat'] = $sessao['0']['categoria'];
         }
     }
 
@@ -60,7 +63,7 @@ class LoginController {
 
         session_destroy();
 
-        header("location: index");
+        header("location: ../");
     }
 
 }

@@ -10,7 +10,8 @@ session_start();
 
 if (!(isset($_SESSION['usuario']) && $_SESSION['usuario'] == '2072525faf0effb700b7d896b7468ff2500ea1ac')) {
 
-    header("location: index.php");
+
+    header("location: ../index.php");
 
     exit;
 }
@@ -20,14 +21,16 @@ require_once 'config.php';
 
 class PainelController extends adm\app\page\Route {
 
-    private $indexPage = "../public/index.php";
+    static $indexPage = indexPage;
     private $clientes;
     private $url;
+    public $get;
 
     public function __construct() {
 
         $this->clientes = new ClientesModel();
         $this->url = new RouteModel();
+        $this->get = $this->url->GetRoute($_GET['route']);
     }
 
     public function index() {
@@ -39,72 +42,79 @@ class PainelController extends adm\app\page\Route {
 
     public function painel() {
 
-        $url = $this->url->GetRoute($_GET['route']);
-        
-        
+
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     public function pedidos() {
-       $url = $this->url->GetRoute($_GET['route']);
+
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     public function departamentos() {
 
-
-        $url = $this->url->GetRoute($_GET['route']);
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     public function produtos() {
 
-
-        $url = $this->url->GetRoute($_GET['route']);
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     public function clientes() {
 
-      
-        $teste = $this->clientes->selectAllClientes();
-
-
-        $url = $this->url->GetRoute($_GET['route']);
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     public function marketing() {
 
-
-        $url = $this->url->GetRoute($_GET['route']);
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     public function configuracoes() {
 
-        $url = $this->url->GetRoute($_GET['route']);
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     //PAGINAS EDITAR
 
     public function editarDepartamentos() {
 
-       $url = $this->url->GetRoute($_GET['route']);
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     public function editarProdutos() {
 
-       $url = $this->url->GetRoute($_GET['route']);
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     public function editarMarketings() {
 
-        $url = $this->url->GetRoute($_GET['route']);
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     public function editarClientes() {
 
-        $url = $this->url->GetRoute($_GET['route']);
+        
+        
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
     public function editarPedidos() {
 
-        $url = $this->url->GetRoute($_GET['route']);
+        $page = $this->get['route'];
+        include self::$indexPage;
     }
 
 }

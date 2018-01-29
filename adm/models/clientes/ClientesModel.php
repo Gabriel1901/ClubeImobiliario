@@ -7,10 +7,10 @@
  */
 
 namespace adm\models\clientes;
+use adm\app\cadastro\Cadastro;
 
-use adm;
 use PDO;
-use adm\app\conexao\Conexao;
+use adm;
 
 require_once 'autoload.php';
 
@@ -19,35 +19,15 @@ require_once 'autoload.php';
  *
  * @author Projeto
  */
-class ClientesModel {
+class ClientesModel extends Cadastro {
 
-    private $con;
+    
 
-    public function __construct() {
-        $this->con = new Conexao();
-    }
-
-    public function insertClientes() {
-
-
-        $Clientes = 'INSERT INTO aw_product_image
-                (product_id, image) 
-                VALUES (' . $id . ',"catalog/' . $idImg . '");';
-
-        $produtos = $this->con->pdo()->prepare($allP);
-        $produtos->execute();
-    }
-
-    public function selectAllClientes() {
-        $sql = 'select * from cdb_clientes;';
-
-        $clientes = $this->con->pdo()->prepare($sql);
-        $clientes->execute();
-
-        $todosClientes = $clientes->fetchAll(PDO::FETCH_ASSOC);
-        //echo json_encode($todosClientes);
-
-        return $todosClientes;
+    public function selectAllCliente() {
+       $clientes= $this->selectAllClientes('clientes');
+       
+       return $clientes;
+    
     }
 
     public function selectIdClientes($id) {

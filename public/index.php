@@ -15,7 +15,9 @@ $twig = new Twig_Environment($loader
 
 print $twig->render($page . '.twig', array(
             'user' => isset($_SESSION['user']) ? $_SESSION['user'] : "",
-            'namePage' => isset($url['name']) ? $url['name'] : "",
+            'cat' => isset($_SESSION['cat']) ? $_SESSION['cat'] : "",
+            'namePage' => isset($this->get['name']) ? $this->get['name'] : "",
+            'page' => isset($this->get['name']) ?  strtolower($this->get['name']) : "",
             'img' => img,
             'route' => route,
             'end' => end,
