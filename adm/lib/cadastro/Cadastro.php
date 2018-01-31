@@ -16,19 +16,31 @@ require_once 'autoload.php';
 abstract class Cadastro {
 
     //put your code here
-
+    private $key = "";
+    private $value = "";
     private $con;
 
     public function __construct() {
         $this->con = new Conexao();
     }
 
-    public function insertClientes($id, $post, $tab) {
+    public function insert($post, $tab) {
+
+        foreach ($post as $key => $value) {
+
+            $this->key .= $key . ", ";
+            $this->value .= $value . ", ";
+        }
+
+        $keys = substr_replace($this->key, '', -2);
+        $value = substr_replace($this->value, '', -2);
 
 
-        $sql = 'INSERT INTO aw_product_image
-                (product_id, image) 
-                VALUES (' . $id . ',"catalog/' . $idImg . '");';
+
+        $sql = "INSERT INTO " . db_p . $tab . "
+                (" . $keys . ") 
+                VALUES (" . $value . ");";
+
 
         $insert = $this->con->pdo()->prepare($sql);
         $insert->execute();
@@ -39,10 +51,11 @@ abstract class Cadastro {
 
         $up = $this->con->pdo()->prepare($sql);
         $up->execute();
-
     }
 
-    public function update($id, $post, $tab) {
+    public function updates($id, $post, $tab) {
+
+
 
         foreach ($post as $k => $v) {
             $conteudo = strtolower($v);
@@ -63,8 +76,33 @@ abstract class Cadastro {
             curl_exec($iniciar);
 
             curl_close($iniciar);
+
             $get = $this->edit($dados, $id, $tab);
         }
+    }
+
+    public function inserts($post, $tab) {
+
+
+
+
+        $conteudo = $post;
+
+        $iniciar = curl_init();
+
+        curl_setopt($iniciar, CURLOPT_RETURNTRANSFER, true);
+
+
+
+        curl_setopt($iniciar, CURLOPT_PORT, true);
+
+        curl_setopt($iniciar, CURLOPT_POSTFIELDS, $post);
+
+        curl_exec($iniciar);
+
+        curl_close($iniciar);
+
+        $get = $this->insert($post, $tab);
     }
 
     public function selectAllClientes($tab) {

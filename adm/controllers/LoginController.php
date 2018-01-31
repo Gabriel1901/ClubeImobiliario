@@ -3,6 +3,7 @@
 namespace adm\controllers;
 
 use adm\models\login;
+use adm\models\url\RouteModel;
 
 /*
  * Classe para validar o acesso do usuário
@@ -13,14 +14,18 @@ use adm\models\login;
  * @author Projeto
  */
 require_once 'autoload.php';
+require_once 'config.php';
 
 class LoginController {
 
     private $usuarioModel;
-    private $indexPage = "../public/index.php";
+    static $indexPage = indexPage;
+    private $url;
 
     public function __construct() {
-
+        $this->url = new RouteModel();
+        $this->url->getUrl('login');
+        $this->page = $this->url->getLayoutPage();
         $this->usuarioModel = new login\LogarModel();
     }
 
@@ -31,8 +36,8 @@ class LoginController {
 
     public function logar() {
         $img = img;
-        $page = 'login/index';
-        include $this->indexPage;
+
+        include self::$indexPage;
     }
 
     public function autenticar() {
@@ -43,10 +48,10 @@ class LoginController {
 
 
         $sessao = $this->usuarioModel->auths($usuario, $senha);
-        
+
         $sessaos = $this->usuarioModel->auth($usuario, $senha);
 
-        
+
 
         if ($sessao) {
             session_start();

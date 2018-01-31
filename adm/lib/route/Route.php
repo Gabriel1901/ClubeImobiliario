@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Rota da Url
+ * Rota de paginas do site
  */
 
 namespace adm\lib\route;
@@ -18,44 +18,39 @@ require_once 'config.php';
  * @author Projeto
  */
 abstract class Route {
-   
+
     public $url;
     public $controller;
     public $action = 'index';
     public $params;
     public $con;
     public $layout;
-    
-     public function __construct() {
+
+    public function __construct() {
         $this->con = new Conexao();
-        
     }
 
-
     public function getUrl($url) {
-        
+
         $route = explode("/", $url);
         $this->controller = $route[0];
         $this->action = isset($route[1]) ? $route[1] : NULL;
-   
-        
     }
-    
+
     public function getLayout() {
-        
-        if(!(isset( $this->action))){
+
+        if (!(isset($this->action))) {
             $this->action = $this->controller;
         }
-        
-        $sql = 'SELECT * FROM cdb_layout_route where route="'.$this->action.'"';
+
+        $sql = 'SELECT * FROM cdb_layout_route where route="' . $this->action . '"';
 
         $layout = $this->con->pdo()->prepare($sql);
         $layout->execute();
         $getLayout = $layout->fetchAll(PDO::FETCH_ASSOC);
-        
-        
+
+
         return $getLayout[0];
     }
-    
-    
+
 }

@@ -1,6 +1,7 @@
 nbproject/
 /conexao/
-
+lib/conexao
+adm/lib/conexao
 /vendor/
 config.php
 php.ini
