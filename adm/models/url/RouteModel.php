@@ -8,10 +8,8 @@
 
 namespace adm\models\url;
 
-use adm\app\page\Route;
+use adm\lib\route\Route;
 use adm;
-use PDO;
-use adm\app\conexao\Conexao;
 
 require_once 'autoload.php';
 
@@ -22,17 +20,15 @@ require_once 'autoload.php';
  */
 class RouteModel extends Route {
 
-    public function GetRoute($urls) {
-        
-        $url = $this->getUrl($urls);
-        $action = $this->loadUrl($url);
-       
-        $route = $action;
-      
-        return $route;
+    private $layoutPage;
+ 
 
-    
-        
-    }
+    public function getLayoutPage() {
+    $layout = isset($this->getLayout()['name_layout']) && $this->getLayout()['name_layout']!= $this->controller ? $this->getLayout()['name_layout'] :"index";
+
+    $get = $this->controller."/".$layout;
+
+    return $get;
+}
 
 }

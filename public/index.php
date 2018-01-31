@@ -11,11 +11,11 @@ $twig = new Twig_Environment($loader
           ] */
 );
 
-print $twig->render($page . '.twig', array(
+print $twig->render($this->page . '.twig', array(
             'user' => isset($_SESSION['user']) ? $_SESSION['user'] : "",
             'cat' => isset($_SESSION['cat']) ? $_SESSION['cat'] : "",
-            'namePage' => isset($this->get['name_page']) ? $this->get['name_page'] : "",
-            'page' => isset($this->get['layout_id']) ? $this->get['layout_id'] : "",
+            'namePage' => isset($this->url->getLayout()['name_page']) ? $this->url->getLayout()['name_page'] : "",
+            'page' => isset($this->url->getLayout()['layout_id']) ? $this->url->getLayout()['layout_id'] : "",
             'img' => img,
             'route' => route,
             'end' => end,

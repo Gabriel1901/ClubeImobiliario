@@ -1,6 +1,6 @@
 nbproject/
-/app/
-adm/app/
+/conexao/
+
 /vendor/
 config.php
 php.ini

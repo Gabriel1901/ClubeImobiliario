@@ -9,7 +9,7 @@
  *
  * @author Projeto
  */
-require_once '../app/conexao/Conexao.php';
+require_once '../lib/conexao/Conexao.php';
 require_once 'config.php';
 
 class UsuarioModel {

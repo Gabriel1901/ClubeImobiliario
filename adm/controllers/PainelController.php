@@ -3,8 +3,8 @@
 namespace adm\controllers;
 
 use adm;
-use adm\models\clientes\ClientesModel;
 use adm\models\url\RouteModel;
+use adm\models\clientes\ClientesModel;
 
 session_start();
 
@@ -19,22 +19,22 @@ if (!(isset($_SESSION['usuario']) && $_SESSION['usuario'] == '2072525faf0effb700
 require_once 'autoload.php';
 require_once 'config.php';
 
-class PainelController extends adm\app\page\Route {
+class PainelController {
 
     static $indexPage = indexPage;
     private $clientes;
     private $url;
-    public $get;
 
     public function __construct() {
 
         $this->clientes = new ClientesModel();
         $this->url = new RouteModel();
-        $this->get = $this->url->GetRoute($_GET['route']);
-        
+        $this->url->getUrl($_GET['route']);
+        $this->page = $this->url->getLayoutPage();
     }
 
     public function index() {
+
 
         $this->painel();
     }
@@ -44,46 +44,44 @@ class PainelController extends adm\app\page\Route {
     public function painel() {
 
 
-        $page = $this->get['route'];
-        
         include self::$indexPage;
     }
 
     public function pedidos() {
 
-        $page = "painel/" . $this->get['name_layout'];
+
+
         include self::$indexPage;
     }
 
     public function departamentos() {
 
-        $page = "painel/" . $this->get['name_layout'];
+
         include self::$indexPage;
     }
 
     public function produtos() {
 
-        $page = "painel/" . $this->get['name_layout'];
+
 
         include self::$indexPage;
     }
 
     public function clientes() {
 
-        $page = "painel/" .$this->get['name_layout'];
-        
+
         include self::$indexPage;
     }
 
     public function marketing() {
 
-        $page = "painel/" . $this->get['name_layout'];
+
         include self::$indexPage;
     }
 
     public function configuracoes() {
 
-        $page = "painel/" . $this->get['name_layout'];
+
         include self::$indexPage;
     }
 
@@ -91,37 +89,36 @@ class PainelController extends adm\app\page\Route {
 
     public function editarDepartamentos() {
 
-        $page = "painel/" . $this->get['name_layout'];
+
         include self::$indexPage;
     }
 
     public function editarProdutos() {
 
-        $page = "painel/" . $this->get['name_layout'];
+
         include self::$indexPage;
     }
 
     public function editarMarketings() {
 
-        $page = "painel/" . $this->get['name_layout'];
+
         include self::$indexPage;
     }
 
     public function editarClientes() {
 
-        $page = "painel/" . $this->get['name_layout'];
+
         include self::$indexPage;
     }
 
     public function editarPedidos() {
 
-        $page = "painel/" . $this->get['name_layout'];
+
         include self::$indexPage;
     }
 
     public function novoCliente() {
 
-        $page = "painel/" . $this->get['name_layout'];
         include self::$indexPage;
     }
 

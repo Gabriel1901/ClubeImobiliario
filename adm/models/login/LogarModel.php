@@ -2,7 +2,7 @@
 
 namespace adm\models\login;
 
-use adm\app\conexao\Conexao;
+use adm\lib\conexao\Conexao;
 
 use PDO;
 /*

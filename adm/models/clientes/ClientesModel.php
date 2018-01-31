@@ -8,7 +8,7 @@
 
 namespace adm\models\clientes;
 
-use adm\app\cadastro\Cadastro;
+use adm\lib\cadastro\Cadastro;
 use PDO;
 use adm;
 
