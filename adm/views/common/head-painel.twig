@@ -74,10 +74,17 @@
                 <div class="page-header">
                     <div class="container-fluid">
                         <div class="pull-right">
-                            <button type="submit" id="button-shipping" form="form-order" formaction="#" formtarget="_blank" data-toggle="tooltip" title="" class="btn btn-info" disabled="" data-original-title="Imprimir lista de entregas"><i class="fa fa-truck"></i></button>
-                            <button type="submit" id="button-invoice" form="form-order" formaction="#" formtarget="_blank" data-toggle="tooltip" title="" class="btn btn-info" disabled="" data-original-title="Imprimir fatura"><i class="fa fa-print"></i></button>
-                            <a href="#" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Novo"><i class="fa fa-plus"></i></a>
-                            <button type="button" id="button-delete" form="form-order" formaction="#" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Excluir"><i class="fa fa-trash-o"></i></button>
+                            
+
+                            {%if page == 3 %}
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i></button>
+                                <a href="{{route}}painel/clientes" class="btn btn-default"><i class="fa fa-reply"></i></a>
+                                {% endif %}
+                            
+                                
+                                {%if page != 3 %}
+                                <a href="{{route}}painel/novoCliente" class=" btn btn-primary"><i class="fa fa-plus"></i></a>
+                                {% endif %}
                         </div>
 
                         <h1>{{namePage}}</h1>
@@ -87,6 +94,7 @@
                         </ul>
                     </div>
                 </div>
+
             {% block conteiner %}{% endblock %}
 
 

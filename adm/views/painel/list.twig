@@ -76,10 +76,34 @@
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                             <thead>
-
+                                <tr> <td style="width: 1px;" class="text-left">Codigo</td>		
+                                    <td class="text-left"><a class="asc">Cliente</a></td>		
+                                    <td class="text-left"><a class="asc">Contato</a></td>		
+                                    <td class="text-left"><a class="asc">Email</a></td>		
+                                    <td class="text-left"><a class="asc">Telefone</a></td>		
+                                    <td class="text-left"><a class="asc">Categoria</a></td>		
+                                    <td class="text-left"><a class="asc">Status</a></td>		
+                                    <td class="text-center">Action</td>		
+                                </tr>
                             </thead>
                             <tbody>
+                                <tr obj-id="' + obj.cliente_id + '">'
 
+
+                                    <td class="text-left"></td>
+                                    <td class="text-left"></td>
+                                    <td class="text-left"></td>
+                                    <td class="text-left"></td>
+                                    <td class="text-left"></td>
+                                    <td class="text-left"></td>
+                                    <td class="text-left"></td>
+                                    <td class="text-center">
+                                        <a href="#" data-toggle="tooltip" title="" class="btn btn-success" data-original-title="Vizualizar"><i class="fa fa-eye"></i></a>
+                                        <a href="editarClientes&clientes=' + obj.clientes_id + '" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Editar"><i class="fa fa-pencil"></i></a>
+                                        <a href="#" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="Ir para o pedido"><i class="fa fa-external-link"></i></a>
+                                    </td>
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -108,18 +132,18 @@
         function carregaRegistros()
         {
 
-            $.getJSON('{{route}}{{page}}/getAll', function (retorno) {
+            $.getJSON('{{route}}clientes/getAll', function (retorno) {
+
 
 
                 $('tbody').empty();
                 retorno.forEach(function (obj, idx) {
 
 
-
                     var tr = '<tr obj-id="' + obj.cliente_id + '">'
 
 
-                            + '<td class="text-left">' + obj.cliente_id + '</td>'
+                            + '<td class="text-left">' + obj.clientes_id + '</td>'
                             + '<td class="text-left">' + obj.nome_fantasia + '</td>'
                             + '<td class="text-left">' + obj.contato + '</td>'
                             + '<td class="text-left">' + obj.email + '</td>'
@@ -128,7 +152,7 @@
                             + '<td class="text-left">' + obj.status + '</td>'
                             + '<td class="text-center">'
                             + ' <a href="#" data-toggle="tooltip" title="" class="btn btn-success" data-original-title="Vizualizar"><i class="fa fa-eye"></i></a>'
-                            + ' <a href="editarClientes&idCliente='+obj.cliente_id+'" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Editar"><i class="fa fa-pencil"></i></a>'
+                            + ' <a href="editarClientes&clientes=' + obj.clientes_id + '" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Editar"><i class="fa fa-pencil"></i></a>'
                             + ' <a href="#" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="Ir para o pedido"><i class="fa fa-external-link"></i></a>'
                             + '</td>'
 

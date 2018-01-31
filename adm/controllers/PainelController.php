@@ -31,6 +31,7 @@ class PainelController extends adm\app\page\Route {
         $this->clientes = new ClientesModel();
         $this->url = new RouteModel();
         $this->get = $this->url->GetRoute($_GET['route']);
+        
     }
 
     public function index() {
@@ -44,42 +45,45 @@ class PainelController extends adm\app\page\Route {
 
 
         $page = $this->get['route'];
+        
         include self::$indexPage;
     }
 
     public function pedidos() {
 
-        $page = $this->get['route'];
+        $page = "painel/" . $this->get['name_layout'];
         include self::$indexPage;
     }
 
     public function departamentos() {
 
-        $page = $this->get['route'];
+        $page = "painel/" . $this->get['name_layout'];
         include self::$indexPage;
     }
 
     public function produtos() {
 
-        $page = $this->get['route'];
+        $page = "painel/" . $this->get['name_layout'];
+
         include self::$indexPage;
     }
 
     public function clientes() {
 
-        $page = $this->get['route'];
+        $page = "painel/" .$this->get['name_layout'];
+        
         include self::$indexPage;
     }
 
     public function marketing() {
 
-        $page = $this->get['route'];
+        $page = "painel/" . $this->get['name_layout'];
         include self::$indexPage;
     }
 
     public function configuracoes() {
 
-        $page = $this->get['route'];
+        $page = "painel/" . $this->get['name_layout'];
         include self::$indexPage;
     }
 
@@ -87,33 +91,37 @@ class PainelController extends adm\app\page\Route {
 
     public function editarDepartamentos() {
 
-        $page = $this->get['route'];
+        $page = "painel/" . $this->get['name_layout'];
         include self::$indexPage;
     }
 
     public function editarProdutos() {
 
-        $page = $this->get['route'];
+        $page = "painel/" . $this->get['name_layout'];
         include self::$indexPage;
     }
 
     public function editarMarketings() {
 
-        $page = $this->get['route'];
+        $page = "painel/" . $this->get['name_layout'];
         include self::$indexPage;
     }
 
     public function editarClientes() {
 
-        
-        
-        $page = $this->get['route'];
+        $page = "painel/" . $this->get['name_layout'];
         include self::$indexPage;
     }
 
     public function editarPedidos() {
 
-        $page = $this->get['route'];
+        $page = "painel/" . $this->get['name_layout'];
+        include self::$indexPage;
+    }
+
+    public function novoCliente() {
+
+        $page = "painel/" . $this->get['name_layout'];
         include self::$indexPage;
     }
 

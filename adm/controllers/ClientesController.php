@@ -33,9 +33,22 @@ class ClientesController {
     }
     public function getAll() {
         
-      $t=  $this->clientes->selectAllCliente();
-      echo json_encode($t);
+      $getAll=  $this->clientes->selectAllCliente();
+      echo json_encode($getAll);
       
+    }
+    
+    public function update() {
+    
+        
+       $post = $_POST;
+       $id = $_GET['clientes'];
+       $tab = 'clientes';
+        
+        
+        $up = $this->clientes->update($id, $post, $tab);
+        $texto = 'Alterado com sucesso !!!';
+         echo json_encode($texto);
     }
     
 }

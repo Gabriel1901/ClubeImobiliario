@@ -7,8 +7,8 @@
  */
 
 namespace adm\models\clientes;
-use adm\app\cadastro\Cadastro;
 
+use adm\app\cadastro\Cadastro;
 use PDO;
 use adm;
 
@@ -21,13 +21,10 @@ require_once 'autoload.php';
  */
 class ClientesModel extends Cadastro {
 
-    
-
     public function selectAllCliente() {
-       $clientes= $this->selectAllClientes('clientes');
-       
-       return $clientes;
-    
+        $clientes = $this->selectAllClientes('clientes');
+
+        return $clientes;
     }
 
     public function selectIdClientes($id) {
@@ -41,5 +38,7 @@ class ClientesModel extends Cadastro {
 
         return;
     }
+
+   
 
 }
