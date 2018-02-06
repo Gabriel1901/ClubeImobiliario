@@ -1,24 +1,48 @@
 <?php
 
-require_once '../vendor/autoload.php';
+echo 'teste';
+/*
 
-$viewFoolder = 'views';
+require_once '../autoload.php';
+require_once '../config.php';
 
-$loader = new Twig_Loader_Filesystem($viewFoolder);
-$twig = new Twig_Environment($loader
-        /* , [
-          'cache' => __DIR__ . 'cache'
-          ] */
-);
+function __autoload($classe) {
+    if (file_exists("../" . urlSite . "/" . $classe . ".php")) {
+        require_once "../" . urlSite . "/Controllers/" . $classe . ".php";
+    } else {
+        echo 'teste1';
+// require_once "models/" . $classe . ".php";
+    }
+}
 
-print $twig->render($this->page . '.twig', array(
-            'user' => isset($_SESSION['user']) ? $_SESSION['user'] : "",
-            'cat' => isset($_SESSION['cat']) ? $_SESSION['cat'] : "",
-            'namePage' => isset($this->url->getLayout()['name_page']) ? $this->url->getLayout()['name_page'] : "",
-            'page' => isset($this->url->getLayout()['layout_id']) ? $this->url->getLayout()['layout_id'] : "",
-            'route_id' => isset($this->url->getLayout()['route_id']) ? $this->url->getLayout()['route_id'] : "",
-            'img' => img,
-            'route' => route,
-            'end' => end,
-            
-));
+$rota = isset($_GET['url']) ? explode("/", $_GET['url']) : "";
+$controllers = isset($rota[0]) && $rota[0] == 'adm' ? 'Painel' : '';
+
+if (isset($rota[0]) && $rota[0] == 'login') {
+    $controllers = ucfirst($rota[0]);
+    $rota[0] = 'Adm';
+    
+}
+
+if (isset($rota[0]) && $rota[0] == 'clientes') {
+    $controllers = ucfirst($rota[0]);
+    $rota[0] = 'Adm';
+    
+}
+
+$controller = isset($rota[0]) ? ucfirst($rota[0]) . "\Controllers\\" . $controllers . "Controller" : 'Imobiliaria\Controllers\SiteController';
+$action = isset($rota[1]) && $rota[1] !== "" ? ucfirst($rota[1]) : "index";
+
+
+
+if (class_exists($controller)) {
+    $route = new $controller();
+    if (method_exists($route, $action)) {
+        $route->$action();
+    } else {
+        print "Pagina nao encontrada";
+    }
+} else {
+
+    print "Pagina naaaao encontrada";
+}      

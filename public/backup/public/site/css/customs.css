@@ -1,0 +1,193 @@
+/*CSS'S CUSTOMIZADAS*/
+.single-price .plan-price {
+	color: #fff!important;
+	float: none!important;
+	font-size: 14px!important;
+	height: 161px!important;
+	margin-bottom: 15px!important;
+	overflow: hidden!important;
+	position: relative!important;
+	z-index: 5!important;
+	padding-top: 3px!important;
+	text-align: center!important;
+}
+.price-one .plan-price:after, .price-two .plan-price:after, .price-three .plan-price:after, .price-four .plan-price:after {
+	border-style: solid!important;
+	border-width: 158px!important;
+	content: ""!important;
+	height: 0!important;
+	left: 50%!important;
+	position: absolute!important;
+	top: 0!important;
+	width: 0!important;
+	z-index: -1!important;
+	margin-left: -157px!important;
+}
+.price-one .plan-price:after {
+	border-color: #FFCC29 transparent transparent!important;
+}
+.single-price.price-one .plan-name {
+	background-color: #e8bd33!important;
+}
+.price-one .btn-buynow {
+	background-color: #e8bd33!important;
+}
+.price-one .btn-buynow:hover {
+	background-color: #FFCC29!important;
+}
+.price-two .plan-price:after {
+	border-color: #A8CF45 transparent transparent!important;
+}
+.price-two .btn-buynow:hover {
+	background-color: #A8CF45!important;
+}
+.price-two .btn-buynow {
+	background-color: #8eb134!important;
+}
+.single-price.price-two .plan-name {
+	background-color: #8eb134!important;
+}
+.price-three .plan-price:after {
+	border-color: #ED3237 transparent transparent!important;
+}
+.single-price.price-three .plan-name {
+	background-color: #de383b!important;
+}
+.price-three .btn-buynow:hover {
+	background-color: #de383b!important;
+}
+.price-three .btn-buynow {
+	background-color: #ED3237!important;
+}
+.price-four .plan-price:after {
+	border-color: #373435 transparent transparent!important;
+}
+.single-price.price-four .plan-name {
+	background-color: #000000!important;
+}
+.price-four .btn-buynow:hover {
+	background-color: #373435!important;
+}
+.price-four .btn-buynow {
+	background-color: #000000!important;
+}
+.panel-group .panel-default:first-child>.panel-heading {
+	background-image: url("http://cdbclubeimobiliario.com.br/public/images/header.png");
+	color: #ff0000!important;
+	/* border-color: #bdbdbd!important; */
+	font-weight: 800!important;
+}
+/* LOTERIA */
+
+.custom-icon {
+	font: normal normal normal 60px/1 FontAwesome!important;
+	color: #ff0000;
+}
+.custom-color-clique-aqui {
+	color: #F00!important;
+	font-size: 19px!important;
+	font-weight: 800!important;
+}
+.oimportante {
+	float: left!important;
+}
+#background {
+	width: 100%!important;
+	height: 100%!important;
+}
+/* ===================================================== */
+/* 4. FOOTER & FOOTER WIDGETS												 */
+/* ===================================================== */
+.footer_bottom {
+	background: #292F38!important;
+	padding: 20px 0!important;
+	color: #fff!important;
+}
+.footer {
+	background: #aed14f!important;
+	padding: 30px 0!important;
+	position: relative!important;
+	color: #fff!important;
+}
+/* Footer Widgets
+====================================*/
+
+.widget_content {
+	margin-top: 15px!important;
+}
+.widget_content > p {
+	font-family: Pt Sans, Helvetica, Arial, sans-serif!important;
+	font-size: 14px!important;
+}
+.copyright {
+	color: #AAAAAA!important;
+	font-size: 12px!important;
+	line-height: 40px!important;
+	margin: 0!important;
+}
+.copyright a {
+	color: #fff!important;
+	text-decoration: none!important;
+}
+.copyright a:hover {
+	color: #aaa!important;
+}
+.sidebar .widget h4 span {
+	background: #fff!important;
+	color: inherit!important;
+}
+#logo-bar {
+	padding: 9px 0!important;
+	/* background: #ffffff6e!important; */
+	z-index: 9999!important;
+	width: 100%!important;
+	height: 94px!important;
+}
+#logo-bar.scroll-to-fixed-fixed {
+	padding: 10px 0!important;
+	box-shadow: 0 2px 4px #ddd!important;
+}
+#logo img {
+	width: 100%!important;
+	height: auto!important;
+}
+#logo > h1 {
+	margin: 0!important;
+	display: inline-block!important;
+	float: left!important;
+}
+p {
+	font-size: 17px!important;
+	text-align: justify!important;
+	font-weight: 200;
+	font-family: verdana;
+}
+b, strong {
+	font-weight: 700!important;
+	font-size: 16px!important;
+}
+.slide__text-desc {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif!important;
+	font-size: 1.8rem!important;
+	margin-bottom: 3.5rem!important;
+}
+.slide__text-heading {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif!important;
+	font-size: 38px!important;
+	margin-bottom: 2rem!important;
+	color: #fff!important;
+	font-weight: 800!important;
+}
+h2 {
+	font-size: 24px!important;
+	color: #000000!important;
+}
+.custom-lista {
+	list-style: square!important;
+	color: #ffffff!important;
+	margin-left: 19px!important;
+}
+.slider-custom {
+	background: #f00!important;
+	font-weight: 800!important;
+}

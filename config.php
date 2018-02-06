@@ -1,7 +1,10 @@
 <?php
 
+namespace adm;
 
-define('img', 'http://www.cdbclubeimobiliario.com.br/public/images/');
+define('img', 'public/images/');
+
+
 
 
 

@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        {% if page !=  1%}
+            {% set titulo = 'Painel / '~ titulo %}
+        {% else %}
+            {% set titulo = titulo %}
+
+        {% endif %}
+
+        <title>{{ titulo }}</title>
+        <base href="{{end}}" />
+        <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        <script type="text/javascript" src="../javascript/jquery/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../javascript/bootstrap/js/bootstrap.min.js"></script>
+        <link href="../stylesheet/bootstrap.css" type="text/css" rel="stylesheet" />
+        <link href="../javascript/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+        <script src="../javascript/jquery/datetimepicker/moment/moment.min.js" type="text/javascript"></script>
+        <script src="../javascript/jquery/datetimepicker/moment/moment-with-locales.min.js" type="text/javascript"></script>
+        <script src="../javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+        <link href="../javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
+        <link type="text/css" href="../stylesheet/stylesheet.css" rel="stylesheet" media="screen" />
+        <script src="../javascript/common.js" type="text/javascript"></script>
+
+        {# incluir tag no textarea ( data-toggle="summernote ") #}
+        <script type="text/javascript" src="../javascript/summernote/summernote.js"></script>
+        <link href="../javascript/summernote/summernote.css" rel="stylesheet" />
+        <script type="text/javascript" src="../javascript/summernote/summernote-image-attributes.js"></script> 
+        <script type="text/javascript" src="../javascript/summernote/opencart.js"></script> 
+        {#  fim  #}
+
+        <!-- Cadastro de clientes -->
+        
+
+            <script src="../stylesheet/clientes/getClientes.js" type="text/javascript"></script>
+            <script src="../stylesheet/clientes/setPost.js" type="text/javascript"></script>
+    
+
+        
+            <script src="../stylesheet/clientes/getListaClientes.js" type="text/javascript"></script>
+            <script src="../stylesheet/clientes/getCliente.js" type="text/javascript"></script>
+        
+        <!-- Fim Cadastro de clientes -->
+    </head>
+    <body>
+        <div class="bg" id="container">
+            {% include 'common/menu.twig'%}
+
+            {% include 'common/menuLateral.twig'%}
+            <div id="content">
+                {% include 'common/cabecario.twig'%}
+            {% block conteiner %}{% endblock %}
+
+
+            {% include 'common/footer.twig'%}
+
+        </div>
+</body>
+</html>
+{%block javascripts %}{% endblock %}

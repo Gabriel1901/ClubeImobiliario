@@ -1,0 +1,764 @@
+
+{% extends "common/head.twig"%}
+
+{% block slider %}
+
+
+    <div id="slider" class="slider-container">
+        <div class="slider-control left inactive"></div>
+        <div class="slider-control right"></div>
+        <ul class="slider-pagi"></ul>
+        <div class="slider">
+            <div class="slide slide-0 active">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">Identidade</h2>
+                        <p class="slide__text-desc">Visual garantida.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-1 ">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">Estabilidade</h2>
+                        <p class="slide__text-desc">Garantida de valores.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-2">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">Parcelamento</h2>
+                        <p class="slide__text-desc">Planejado.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-3">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">Fluxo de Caixa</h2>
+                        <p class="slide__text-desc">Dispensa compra de grandes volumes.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-4">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">Otimização</h2>
+                        <p class="slide__text-desc">Estoque</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-5">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">Valores</h2>
+                        <p class="slide__text-desc">Pré-definidos para todos os produtos que utilizar.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-6">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">Instalações</h2>
+                        <p class="slide__text-desc">Remoção e manutenção das Placas e preços reduzidos.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-7">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">Garantia</h2>
+                        <p class="slide__text-desc">Compromisso com os prazos</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-8">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">Entrega</h2>
+                        <p class="slide__text-desc">Programada conforme necessidade, datas e quantidades definidos.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-9">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">Valor agregado</h2>
+                        <p class="slide__text-desc">Agregado com a valorização da marca e comprometimento.</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script  src="public/site/js/index.js"></script>
+{% endblock %}
+{# fim  #}
+
+{% block diferenciais %}
+    <section id="diferenciais" class="container">  
+        <div id="feature-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="page-header">Diferenciais</h2>
+                </div>
+                <div class="col-sm-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="feature-inner">
+                        <div class="icon-wrapper">
+                            <i class="fa fa-2x fa-envelope-o"></i>
+                        </div>
+                        <h2>CONVENIÊNCIA</h2>
+                    </div>
+                </div>
+                <div class="col-sm-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="900ms">
+                    <div class="feature-inner">
+                        <div class="icon-wrapper">
+                            <i class="fa fa-2x fa-star-o"></i>
+                        </div>
+                        <h2>ECONOMIA</h2>
+                    </div>
+                </div>
+                <div class="col-sm-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="1200ms">
+                    <div class="feature-inner">
+                        <div class="icon-wrapper">
+                            <i class="fa fa-2x fa-comments-o"></i>
+                        </div>
+                        <h2>SATISFAÇÃO</h2>
+                    </div>
+                </div>                        
+            </div>
+        </div>
+
+        <br>
+        <br>
+    </section>
+{% endblock %}
+{# fim  #}
+
+{% block oCreditoFantastico %}
+
+
+    <section id="o-credito-fantastico" class="responsive">
+        <div class="vertical-center" id="action">
+            <div class="container">
+                <div class="row">
+                    <div class="action take-tour">
+                        <div class="col-sm-12 wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 300ms; animation-name: fadeInLeft;">
+                            <br><center><h1 class="title">O Crédito Fantástico</h1>
+                                <h4>  É  um sistema de compra programada que você pode utilizar por tempo indeterminado enquanto<br> durarem
+                                    seus créditos e fazer de qualquer lugar que tiver uma conexão de internet.</h4></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="single-features">
+                    <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <img src="{{ img }}home/noticia.png" class="img-responsive" alt="">
+                    </div>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h2>A boa notícia é</h2>
+                        <P>Que além do conteúdo do Crédito Fantástico, eu resolvi oferecer bônus que, na minha opinião, 
+                            Agrega grande valor no conteúdo de nossa oferta.</P>
+                    </div>
+                </div>
+                <div class="single-features">
+                    <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h2>O interesse no Crédito Fantástico</h2>
+                        <P>Foi bem recebido por nossos clientes em visitas feitas recentemente...
+                            Mais de 50 visitas realizadas antes deste lançamento que demonstraram o interesse em se inscrever...</P>
+                    </div>
+                    <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <img src="{{ img }}home/clientes.png" class="img-responsive" alt="">
+                    </div>
+                </div>
+                <div class="single-features">
+                    <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <img src="{{ img }}home/credito.png" class="img-responsive" alt="">
+                    </div>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h2>Vamos falar da nossa OFERTA EXTRAORDIN&Aacute;RIA </h2>
+                        <P>Que pensamos para você depois de dias planejando,
+                            preparando, escutando nossos parceiros decidimos lhe oferecer.</P>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
+{# fim  #}
+
+{% block loteria %}
+    <section id="loteria">
+        <div class="container">
+            <div id="tab-container">
+
+
+                <div id="accordion-container">
+
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseO">
+
+                                        <h2>
+                                            <center>
+                                                <img src="{{ img }}credito-fantastico.png" class="img-responsive" alt=""><br>Imagine que você comprou um bilhete de loteria.</center><center class="custom-color-clique-aqui"> <br>(Clique aqui) </center></h2>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseO" class="panel-collapse collapse">
+                                <div class="panel-body">
+
+
+                                    <p align="justify">Só que, ao contrário de um bilhete comum, esse bilhete te oferece a possibilidade de reembolso caso ele não seja o bilhete premiado.</p>
+                                    <p align="justify">Você compraria esse bilhete?</p>
+                                    <p align="justify">Você investiria seu dinheiro nele tendo a certeza que, se ele não fosse o bilhete premiado, você pudesse ir na lotérica pedir o ressarcimento desse bilhete de volta?</p>
+                                    <p align="justify">Eu compraria!
+                                    </p>
+                                    <p align="justify">E se você também compraria, continue lendo esse e-mail, porque eu vou te fazer uma proposta parecida - mas deixa eu explicar o que eu quero dizer com isso.</p>
+                                    <p align="justify">Para nós, o Crédito Fantástico é como se fosse um bilhete premiado.</p>
+                                    <p align="justify">Mas, veja, isso não quer dizer que é uma fórmula mágica.</p>
+                                    <p align="justify">É um resultado que vem da dedicação, do esforço e da energia que colocamos neste empreendimento, para colocar o crédito fantástico em ação.</p>
+                                    <p align="justify">Dá só uma olhada:</p>
+                                    <p align="justify">Pode-se dizer que, o Crédito Fantástico é uma espécie de bilhete de loteria premiado.</p>
+                                    <p align="justify">Agora, por que eu estou te falando isso?</p>
+                                    <p align="justify">Porque eu não tenho como julgar que, para você, se o crédito fantástico é um bilhete de loteria premiado.</p>
+                                    <p align="justify">Só você pode avaliar isso.</p>
+                                    <p align="justify">Mas o fato é o seguinte: eu te dou 45 dias para descobrir.<br>
+                                    </p>
+                                    <p align="justify"><strong>E, se nos primeiros 45 dias depois da confirmação da sua inscrição no crédito fantástico você descobrir que na sua própria opinião não é o equivalente a um bilhete premiado, basta você me mandar um e-mail, dentro desses 45 dias, pedindo o cancelamento, que eu envio o seu dinheiro de volta, descontando o que foi usado até o cancelamento<br>
+                                            <br>Também vamos colocar aqui uma garantia de comprometimento de prazos estipulados, o não cumprimento de prazos pela Casa dos Banners dará o direito do cliente não pagar o produto em questão, isso mesmo se a Casa dos Banners atrasar uma entrega você não vai pagar por este produto, vai receber de graça.<br>
+                                            <br>
+                                            Ps. Prazos sempre estipulados na hora do pedido e enviado via e-mail para o cliente acompanhar<br>
+                                        </strong></p>
+                                    <p align="justify">Acho que na vida vai ser difícil você encontrar um acordo desses.</p>
+                                    <p align="justify">Porque nesse caso, o risco é todo meu.</p>
+                                    <p align="justify">E por que eu estou assumindo esse risco?</p>
+                                    <p align="justify">Porque acreditamos neste projeto.</p>
+                                    <p align="justify">Porque os anos de experiência neste mercado nos capacitaram para isso .</p>
+                                    <p align="justify">Porque eu já apertei a mão de vários empreendedores que acreditam no resultado.</p>
+                                    <p align="justify">E porque eu quero apertar a sua mão também.<br>
+                                    </p>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+    </section>
+{% endblock %}
+{# fim  #}
+
+{% block as10Vantagens %}
+    <section id="as-10-vantagens" class="container"> 
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="page-header">As 10 Vantagens</h2>
+            </div>
+            <div class="col-sm-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="1200ms">
+                <div class="feature-inner">
+                    <p align="justify">A dedicação de 10 anos na comunicação visual, e este ano aconteceu uma coisa percebemos que já atendemos mais de 1000 imobiliárias pelo brasil com diversos produtos e serviços, e estamos comprometidos em melhorar e revolucionar nosso atendimento, e agora resolvemos que vamos nos tornar a mais especializada  no mercado imobiliário, criando VALOR para nosso Cliente você e para a Casa dos Banners estruturando e focando somente na área de imóveis trabalhando junto com imobiliárias e construtoras.</p>
+                    <p align="justify">Como disse anteriormente queremos criar uma parceria, e ter uma maior dinâmica com nossos clientes, ter procesos melhor definidos, poder dar uma melhor assistência e consultoria, apresentar produtos de melhor qualidade.</p>
+                    <p align="justify">E antes de tomar esta decisão, pensei muito nisto para apresentar este produto. </p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <hr>
+                <ul id="tab2" class="nav nav-pills">
+                    <li class="active"><a href="#tab2-item1" data-toggle="tab">Identidade</a></li>
+                    <li><a href="#tab2-item2" data-toggle="tab">Estabilidade</a></li>
+                    <li><a href="#tab2-item3" data-toggle="tab">Parcelar</a></li>
+                    <li><a href="#tab2-item4" data-toggle="tab">Fluxo de Caixa</a></li>
+                    <li><a href="#tab2-item5" data-toggle="tab">Estoque</a></li>
+                    <li><a href="#tab2-item6" data-toggle="tab">Embalagem</a></li>
+                    <li><a href="#tab2-item7" data-toggle="tab">Valores</a></li>
+                    <li><a href="#tab2-item8" data-toggle="tab">Instalação</a></li>
+                    <li><a href="#tab2-item9" data-toggle="tab">Garantia</a></li>
+                    <li><a href="#tab2-item10" data-toggle="tab">Entrega</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="tab2-item1">
+
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <img src="{{ img }}vantagens/identidade.jpg"" class="img-responsive" alt="">
+
+                            </div>   
+                            <div class="col-md-6">
+                                <p>Preparar e antecipar para nosso cliente uma identidade visual gratuita sobre todos os produtos utilizados por você para que possamos agilizar a etapa de preparação de artes, que normalmente tem consumido um tempo muito grande e as vezes esquecemos de algum detalhe ou até mesmo deixamos passar algum erro.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab2-item2">
+
+                        <div class="col-md-6">
+
+
+                            <img src="{{ img }}vantagens/estabilidade.jpg"" class="img-responsive" alt="">
+
+
+                        </div>   
+                        <div class="col-md-6"> <p>Estabilidade e garantia nos valores dos produtos por mais de um ano sem mudanças ou surpresas até mesmo sair fora do seu orçamento
+                                .</p></div>
+                    </div>
+                    <div class="tab-pane fade" id="tab2-item3">
+
+                        <div class="col-md-6">
+
+                            <img src="{{ img }}vantagens/parcelamento.jpg"" class="img-responsive" alt="">
+
+
+                        </div>   
+                        <div class="col-md-6"><p>Poder parcelar ou planejar seus investimentos em publicidade dos imóveis
+                                .</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab2-item4">
+
+                        <div class="col-md-6">
+
+                            <img src="{{ img }}vantagens/fluxoDeCaixa.jpg"" class="img-responsive" alt="">
+
+                        </div>   
+                        <div class="col-md-6"> <p>Melhorar seu fluxo de caixa pois não precisa fazer compras de grandes quantidades para melhorar o valor da compra.</p>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="tab2-item5">
+
+                        <div class="col-md-6">
+
+                            <img src="{{ img }}vantagens/estoque.jpg"" class="img-responsive" alt="">
+
+
+                        </div>   
+                        <div class="col-md-6"><p>Otimizar estoques não precisar manter grandes estoques, nem espaço físico.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab2-item6">
+
+                        <div class="col-md-6">
+
+                            <img src="{{ img }}vantagens/valores.jpg"" class="img-responsive" alt="">
+
+                        </div>   
+                        <div class="col-md-6"><p>Embalagem, faixas, banners e pvc sem em caixas identificando produto.</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab2-item7">
+
+                        <div class="col-md-6">
+
+                            <img src="{{ img }}vantagens/instalacoes.jpg"" class="img-responsive" alt="">
+
+
+                        </div>   
+                        <div class="col-md-6"> <p>Valores pré-definido de todo os produtos que utiliza.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab2-item8">
+
+                        <div class="col-md-6">
+
+                            <img src="{{ img }}vantagens/garantia.jpg"" class="img-responsive" alt="">
+
+
+                        </div>   
+                        <div class="col-md-6"> <p>Instalação. retirada e manutenção de suas placas com preços reduzidos.</p>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="tab2-item9">
+
+                        <div class="col-md-6">
+
+                            <img src="{{ img }}vantagens/entrega.jpg"" class="img-responsive" alt="">
+
+
+                        </div>   
+                        <div class="col-md-6"> <p>Garantia e compromisso com prazos estipulados ou negociados, placas com maior e melhor valor agregado.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab2-item10">
+
+                        <div class="col-md-6">
+
+                            <img src="{{ img }}vantagens/valor.jpg"" class="img-responsive" alt="">
+
+
+                        </div>   
+                        <div class="col-md-6"><p>Entrega programada conforme necessidade do cliente com datas e quantidades definidas.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{# fim  #}
+
+
+{% block oImportante %}
+
+    <section id="importante" class="container"> 
+
+        <div class="container">
+            <div class="row">
+                <h2>Aten&ccedil;&atilde;o</h2>
+                <HR>
+                <div class="single-features">
+                    <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <img src="{{ img }}atencao/o-mais-importante.png" class="img-responsive" alt="">
+                    </div>
+                    <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h2>O mais importante para n&oacute;s</h2>
+                        <P>Casa dos Banners e o VALOR proporcionado,para nosso cliente, valoriza&ccedil;&atilde;o de suas marcas / apresenta&ccedil;&atilde;o dos produtos perante seu cliente / comprometimento com seu neg&oacute;cio.</P>
+                    </div>
+                </div>
+                <div class="single-features">
+                    <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h2>Ficar em cima do muro</h2>
+                        <P>&Eacute;, na minha percep&ccedil;&atilde;o, uma das situa&ccedil;&otilde;es mais agonizantes e ao mesmo tempo mais comuns para empreendedores. E existe um momento espec&iacute;fico onde isso ocorre com maior frequ&ecirc;ncia, que &eacute; justamente um momento de defini&ccedil;&atilde;o dos mais importantes.</P>
+                    </div>
+                    <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <img src="{{ img }}atencao/ficar-em-cima-do-muro.png" class="img-responsive" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</section>
+{% endblock %}
+{# fim  #}
+{% block bonus %}
+    <section id="bonus" class="container">        
+        <div id="tab-container">
+            <div id="accordion-container">
+                <h2 class="page-header">Bônus</h2>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion " href="#collapseOne">
+                                    #1 - Crédito
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <div class="col-md-6">
+                                    <img src="{{ img }}bonus/credito.jpg"" class="img-responsive" alt="">
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Crédito em dinheiro acrescido direto em sua conta.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true">
+                                    #2 - Identidade visual
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+
+                                <div class="col-md-6"><img src="{{ img }}bonus/identidade.jpg"" class="img-responsive" alt="">
+                                </div>
+                                <div class="col-md-6"> Identidade visual pensada e planejada para melhor divulgar seus produtos tem o poder de alavancar, 
+                                   <p> agilizar procedimentos, colocar sua placa mais rápido no local angariado, além de evitar erros de ortografia, 
+                                    esquecimento de algum dado importante, 
+                                    claro que isso junto com seu pessoal de marketing com o seu conceito, 
+                                    mas com nosso conhecimento sobre os produtos.
+
+                                    Isso não só devido a parcerias formada, mas sim da ajuda entre si. 
+                                    onde ajudam e são ajudados uns pelos outros, possibilitando assim melhores resultados.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true">
+                                    #3 - Estabilidade e garantia nos valores dos produtos enquanto durar seus créditos sem mudanças ou surpresas
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+
+                                <div class="col-md-6"><img src="{{ img }}bonus/estabilidade.jpg"" class="img-responsive" alt="">
+                                </div> 
+                                <div class="col-md-6">Isso cria uma estabilidade, e possibilidade de projetar seus investimentos em publicidade para até um ano ou mais,
+                                   <p> colocando um diferencial no investimento em mídia em suas angariação.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                    #4 - Garantia sobre prazo de entrega
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+
+                                <div class="col-md-6"> <img src="{{ img }}bonus/garantia.jpg"" class="img-responsive" alt="" aria-expanded="true">
+                                </div> 
+                                <div class="col-md-6">Ao fazer a inscrição no crédito fantástico, você terá todas as retiradas de placas sem custo,
+                                   <p> pela Casa dos Banners, além desta ausência de custo,
+                                    tem um apelo ecológico pois podemos reciclar estas placas, 
+                                    todos sabemos que são produtos ruins de dar destino correto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true">
+                                    #5 - Ambiente Exclusivo do Cliente em nosso site
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="col-md-6">
+                                    <img src="{{ img }}bonus/ambiente.jpg"" class="img-responsive" alt="">
+                                </div>
+                                <div class="col-md-6">A criação de um ambiente único, exclusivo  dentro de nosso site com todas as suas artes produtos, 
+                                   <p> Fotos de suas placas instaladas onde controlamos as retiradas, possibilidade de acompanhar seus créditos, 
+                                    verificar a identidade visual criada por nós em conjunto, 
+                                    poder fazer pedidos e alterações,verificar sua lista de valores.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{# fim  #}
+
+{% block ofertas %}
+     <section id="ofertas" class="container">      
+            <div class="row">
+          <div class="col-sm-12 wow">
+              
+                <h2 class="page-header">Ofertas</h2>
+              <div class="col-sm-3 wow mdesative" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <br><br><br><br> <img src="http://www.cdbclubeimobiliario.com.br/public/images/ofertas/left.png" alt="Responsive image" class="img-responsive" align="right">
+</div>
+                <div class="col-sm-6 wow" data-wow-duration="500ms" data-wow-delay="300ms">
+<center><img src="http://www.cdbclubeimobiliario.com.br/public/images/ofertas/meio.png" class="img-responsive" alt="Responsive image"></center>
+
+</div>
+                <div class="col-sm-3 wow mdesative" data-wow-duration="500ms" data-wow-delay="300ms">
+<br><br><br><br><img src="http://www.cdbclubeimobiliario.com.br/public/images/ofertas/right.png" alt="Responsive image" class="img-responsive" align="left">
+</div>
+          </div>
+            </div>
+    <!--<section id="ofertas" class="container">        
+        <div class="price-table">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="single-price price-one">
+                        <div class="table-heading">
+                            <p class="plan-name">Oferta #1:</p>
+                            <p class="plan-price"><span class="dollar-sign">R$: </span><span class="price">3.000,00</span><span class="month">+ Super bonus de 15%</span><span class="dollar-sign">Total R$: </span><span class="price">3.450,00</span></p>
+                        </div>
+                        <ul class="ofertas-customs">                            
+                            <li>Banner <span><i class="fa fa-check"></i></span></li>
+                            <li>Faixa <span><i class="fa fa-check"></i></span></li>
+                            <li>Placa de PVC <span><i class="fa fa-check"></i></span> </li>
+                            <li>Placa de metal e lona <span><i class="fa fa-check"></i></span></li>
+                            <li>Placa de metal e adesivo <span><i class="fa fa-check"></i></span></li>
+                            <li>Ps: placas instaladas e com p�s de madeira com 4 metros <span><i class="fa fa-check"></i></span></li>
+                        </ul>
+                        <a href="http://www.casadosbanners.com.br/loja/index.php?route=product/product&path=64_134&product_id=1190" class="btn btn-buynow">Contratar</a><br><br>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="single-price price-two">
+                        <div class="table-heading">
+                            <p class="plan-name">Oferta #2:</p>
+                            <p class="plan-price"><span class="dollar-sign">R$: </span><span class="price">5.000,00</span><span class="month">+ Super bonus de 20%</span><span class="dollar-sign">Total R$: </span><span class="price">6.000,00</span></p>
+                        </div> 
+                        <ul class="ofertas-customs">                         
+                            <li>Banner <span><i class="fa fa-check"></i></span></li>
+                            <li>Faixa <span><i class="fa fa-check"></i></span></li>
+                            <li>Placa de PVC <span><i class="fa fa-check"></i></span> </li>
+                            <li>Placa de metal e lona <span><i class="fa fa-check"></i></span></li>
+                            <li>Placa de metal e adesivo <span><i class="fa fa-check"></i></span></li>
+                            <li>Ps: placas instaladas e com p�s de madeira com 4 metros <span><i class="fa fa-check"></i></span></li>
+                        </ul>
+                        <a href="http://www.casadosbanners.com.br/loja/index.php?route=product/product&path=64_134&product_id=1191" class="btn btn-buynow btn-hightlight">Contratar</a><br><br>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="single-price price-three">
+                        <div class="table-heading">
+                            <p class="plan-name">Oferta #3:</p>
+                            <p class="plan-price"><span class="dollar-sign">R$: </span><span class="price">10.000,00</span><span class="month">+ Super bonus de 25%</span><span class="dollar-sign">Total R$: </span><span class="price">12.500,00</span></p>
+                        </div>
+                        <ul class="ofertas-customs">                   
+                            <li>Banner <span><i class="fa fa-check"></i></span></li>
+                            <li>Faixa <span><i class="fa fa-check"></i></span></li>
+                            <li>Placa de PVC <span><i class="fa fa-check"></i></span> </li>
+                            <li>Placa de metal e lona <span><i class="fa fa-check"></i></span></li>
+                            <li>Placa de metal e adesivo <span><i class="fa fa-check"></i></span></li>
+                            <li>Ps: placas instaladas e com p�s de madeira com 4 metros <span><i class="fa fa-check"></i></span></li>
+                        </ul>
+                        <a href="http://www.casadosbanners.com.br/loja/index.php?route=product/product&path=64_134&product_id=1192" class="btn btn-buynow">Contratar</a><br><br>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="single-price price-four">
+                        <div class="table-heading">
+                            <p class="plan-name">Oferta #4:</p>
+                            <p class="plan-price"><span class="dollar-sign">R$: </span><span class="price">20.000,00</span><span class="month">+ Super bonus de 30%</span><span class="dollar-sign">Total R$: </span><span class="price">26.000,00</span></p>
+                        </div>
+                        <ul class="ofertas-customs">                    
+                            <li>Banner <span><i class="fa fa-check"></i></span></li>
+                            <li>Faixa <span><i class="fa fa-check"></i></span></li>
+                            <li>Placa de PVC <span><i class="fa fa-check"></i></span> </li>
+                            <li>Placa de metal e lona <span><i class="fa fa-check"></i></span></li>
+                            <li>Placa de metal e adesivo <span><i class="fa fa-check"></i></span></li>
+                            <li>Ps: placas instaladas e com p�s de madeira com 4 metros <span><i class="fa fa-check"></i></span></li>
+                        </ul>
+                        <a href="http://www.casadosbanners.com.br/loja/index.php?route=product/product&path=64_134&product_id=1193" class="btn btn-buynow">Contratar</a><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <br><br><br><br>
+    </section>
+{% endblock %}
+{# fim  #}
+
+{# {% block confichaDeCadastrotent %}
+<section id="ficha-de-cadastro">
+    <div class="container">
+        <div class="row">
+
+            <div class="text-center col-md-14" >
+                <div class="col-sm-2">
+                    <img src="{{ img }}logo2.png" width="100%"/>
+                </div>
+                <div class="col-sm-7 col-sm-offset-1">
+                    <div class="col-md-3" >
+                        <img src="{{ img }}ebook.png" alt="ebook" width="80%"/>
+                    </div>
+                    <div style="margin-bottom: 50px">
+                        <strong style="font-size: 25px; color: #fff;">Ganhe um ebook <span style="color: red">" Totalmente Grátis "</span></strong>
+                        <br>
+                        <br>
+                        <strong style="font-size: 25px; margin-bottom: 50px; color: #fff;">"Resolva em definitivo seus problemas com produtos de divulgação imobiliária "</strong>
+                    </div>
+
+                    <form  method="post" action="index.php?c=capturaEmail&a=capturaEmail">
+
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" required="required" placeholder="Digite Seu melhor email">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-submit">Quero ter o ebook Agora</button>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>     
+
+</section>
+
+{% endblock %} #}

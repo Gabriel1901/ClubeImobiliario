@@ -1,0 +1,227 @@
+{% extends "common/head-painel.twig" %}
+
+{% block conteiner %}
+
+
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-list"></i> Listando {{namePage}}</h3>
+            </div>
+            <div class="panel-body">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="input-name">Cliente</label>
+                                <input type="text" name="filter_name" value="" placeholder="Cliente" id="input-name" class="form-control" autocomplete="off">
+                                <ul class="dropdown-menu">
+                                </ul>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="input-email">E-mail</label>
+                                <input type="text" name="filter_email" value="" placeholder="E-mail" id="input-email" class="form-control" autocomplete="off">
+                                <ul class="dropdown-menu">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="input-customer-group">Tipo de cliente</label>
+                                <select name="filter_customer_group_id" id="input-customer-group" class="form-control">
+                                    <option value="*"></option>
+                                    <option value="3">Agencias</option>
+                                    <option value="2">Construtoras</option>
+                                    <option value="1">Default</option>
+                                    <option value="4">Fisico</option>
+                                    <option value="5">Imobili&aacute;ria</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="input-status">Situa&ccedil;&atilde;o
+                                </label>
+                                <select name="filter_status" id="input-status" class="form-control">
+                                    <option value="*"></option>
+                                    <option value="1">Habilitado</option>
+                                    <option value="0">Desabilitado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="input-approved">Aprovado</label>
+                                <select name="filter_approved" id="input-approved" class="form-control">
+                                    <option value="*"></option>
+                                    <option value="1">Sim</option>
+                                    <option value="0">N&atilde;o</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="input-ip">IP</label>
+                                <input type="text" name="filter_ip" value="" placeholder="IP" id="input-ip" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="input-date-added">Cadastro</label>
+                                <div class="input-group date">
+                                    <input type="text" name="filter_date_added" value="" placeholder="Cadastro" data-date-format="YYYY-MM-DD" id="input-date-added" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+                                    </span></div>
+                            </div>
+                            <button type="button" id="button-filter" class="btn btn-red pull-right"><i class="fa fa-filter"></i> Filtrar</button>
+                        </div>
+                    </div>
+                </div>
+                <form action="#" method="post" enctype="multipart/form-data" id="form-customer">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead class="lista{{ route_id }}">
+                                <tr>
+                                <tr> <td class="text-left">Código</td>
+                                    <td class="text-left"><a class="asc">Cliente</a></td>
+                                    <td class="text-left"><a class="asc">Contato</a></td>
+                                    <td class="text-left"><a class="asc">Email</a></td>
+                                    <td class="text-left"><a class="asc">Telefone</a></td>
+                                    <td class="text-left"><a class="asc">Status</a></td>	
+                                    <td class="text-center">Action</td>
+                                </tr>
+                            </thead>
+                            <tbody class="lista{{ route_id }}">
+                                <tr>
+
+
+                                    <td class="text-left">' + obj.clientes_id + '</td>
+                                    <td class="text-left">' + obj.nome_fantasia + '</td>
+                                    <td class="text-left">' + obj.contato + '</td>
+                                    <td class="text-left">' + obj.email + '</td>
+                                    <td class="text-left">' + obj.telefone + '</td>
+                                    <td class="text-left">' + obj.status + '</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Infos"><i class="fa fa-eye"></i></button>
+                                        <a href='+route+'painel/editarClientes&clientes=' + obj.clientes_id + ' data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Editar"><i class="fa fa-pencil"></i></a>
+                                        <a href="#" data-toggle="tooltip" title="" class="btn btn-red" data-original-title="Ir para o pedido"><i class="fa fa-external-link"></i></a>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-sm-6 text-left">
+                        <ul class="pagination">
+                            <li class="active"><span>1</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 text-right">Exibindo de 1 a 1 do total de (1 p&aacute;ginas)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div id="Infos" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">IDNOME</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked">
+                                <li class="active"><a href="#vtab1" data-toggle="tab"><i class="fa fa-id-card-o"></i> Informa&ccedil;&otilde;es</a></li>
+                                <li><a href="#vtab2" data-toggle="tab"><i class="fa fa-location-arrow"></i> Endere&ccedil;o</a></li>
+                            </ul>
+
+                            <div class="custom-coluna-saldo"><br><br><p class="custom-info-saldo">SALDO:</p><p class="custom-osaldo">R$ 5.000,00</p></div>
+
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="vtab1">
+                                    <table class="table">
+                                        <thead>
+                                        <br>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Tipo de cliente:</th>
+                                                <td>IDTIPODOCLIENTE </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Contato:</th>
+                                                <td>IDCONTATO </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Nome Fantasia:</th>
+                                                <td>IDNOMEFANTASIA </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">E-mail:</th>
+                                                <td>IDEMAIL </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Telefone:</th>
+                                                <td>IDTELEFONE </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">CPNJ / CPF:</th>
+                                                <td>IDCNJP/CPF </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Status:</th>
+                                                <td>IDSTATUS </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </code>  
+                                    </pre>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="vtab2">
+                                    <table class="table">
+                                        <thead>
+                                        <br>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Rua:</th>
+                                                <td>IDRUA </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Bairro:</th>
+                                                <td>IDBAIRRO </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Cidade:</th>
+                                                <td>IDCIDADE </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Estado:</th>
+                                                <td>IDESTADO </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">CEP:</th>
+                                                <td>IDCEP</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %} 
