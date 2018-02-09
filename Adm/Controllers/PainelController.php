@@ -6,13 +6,13 @@ use Systema\Controller;
 
 session_start();
 
-if (!(isset($_SESSION['usuario']) && $_SESSION['usuario'] == '2072525faf0effb700b7d896b7468ff2500ea1ac')) {
+/* if (!(isset($_SESSION['usuario']) && $_SESSION['usuario'] == '2072525faf0effb700b7d896b7468ff2500ea1ac')) {
 
 
-    header("location: /login");
+  header("location: /login");
 
-    exit;
-}
+  exit;
+  } */
 
 require_once '../autoload.php';
 require_once '../config.php';
@@ -21,8 +21,11 @@ class PainelController extends Controller {
 
     public function index() {
 
+       
         print $this->twig->render('painel/index.twig', array(
-            'titulo' => 'Painel de Controle'
+                    'empresa' => $this->getEmpresa(),
+                    'titulo' => 'Painel de Controle',
+                    'page' => 'index'
         ));
     }
 
@@ -41,7 +44,9 @@ class PainelController extends Controller {
     public function clientes() {
 
         print $this->twig->render('painel/list.twig', array(
-            'titulo' => 'Clientes'
+                    'empresa' => $this->getEmpresa(),
+                    'titulo' => 'Clientes',
+                    'page' => 'list'
         ));
     }
 
@@ -68,10 +73,12 @@ class PainelController extends Controller {
     }
 
     public function editarClientes() {
-        
-        
+
+
         print $this->twig->render('painel/editCliente.twig', array(
-            'titulo' => 'Editar Clientes'
+                    'empresa' => $this->getEmpresa(),
+                    'titulo' => 'Editar Clientes',
+                    'page' => 'edit'
         ));
     }
 
@@ -81,9 +88,10 @@ class PainelController extends Controller {
 
     public function novoCliente() {
         print $this->twig->render('painel/editCliente.twig', array(
-            'titulo' => 'Novo Clientes'
+                    'empresa' => $this->getEmpresa(),
+                    'titulo' => 'Novo Clientes',
+                    'page' => 'view'
         ));
-        
     }
 
 }

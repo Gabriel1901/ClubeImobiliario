@@ -104,8 +104,13 @@ abstract class Cadastro {
         $get = $this->insert($post, $tab);
     }
 
-    public function selectAll($tab) {
-        $sql = 'select * from ' . db_p . $tab;
+    public function selectAll($tab, $status) {
+        $stat = '';
+        if ($status) {
+            $stat = " where status=" . $status;
+        }
+
+        $sql = 'select * from ' . db_p . $tab . $stat;
 
         $colun = $this->con->pdo()->prepare($sql);
         $colun->execute();

@@ -1,0 +1,54 @@
+<style>
+
+    {% for key, slider in sliders %}
+
+        .slide:nth-child({{ key+1 }}) {
+            left: {{ key * 100 }}%;
+        }
+        .slide:nth-child({{ key+1 }}) .slide__bg {
+            left: -{{ (key * 100)/2 }}%;
+            background-image: url("../../images/{{slider.imagem}}");
+        }
+        .slide:nth-child({{ key+1 }}) .slide__overlay-path {
+            fill: #000000;
+        }
+        @media (max-width: 991px) {
+            .slide:nth-child({{ key+1 }}) .slide__text {
+                background-color: rgba(0, 0, 0, 0.8);
+                height: 17px!important;
+            }
+        }
+    {% endfor %}
+
+</style>
+<div id="slider" class="slider-container">
+    <div class="slider-control left inactive"></div>
+    <div class="slider-control right"></div>
+    <ul class="slider-pagi"></ul>
+    <div class="slider">
+        {% for key, slider in sliders %}
+
+
+            <div class="slide slide-{{ key }} active">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                    <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading">{{ slider.nome }}</h2>
+                        <p class="slide__text-desc">{{ slider.nome }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+
+    </div>
+</div>
+<br>
+<br>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="site/js/index.js"></script>{# empty Twig template #}

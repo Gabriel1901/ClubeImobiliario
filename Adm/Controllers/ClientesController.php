@@ -1,9 +1,9 @@
 <?php
 
-namespace Adm\Controllers;
+namespace Adm\controllers;
 
 use Adm;
-use Adm\Models\clientes\ClientesModel;
+use Adm\models\clientes\ClientesModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

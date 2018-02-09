@@ -1,0 +1,33 @@
+<section id="diferenciais" class="container">  
+    <div id="feature-container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                {% for modTitulo in modTitulos %}
+                    {% if  modTitulo.modulos_id == 2 %}
+                        <h2 class="page-header">{{modTitulo.titulo}}</h2>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+            {% for conteudo in conteudos %}
+                {% if  conteudo.modulos_id == 2 %}
+                    <div class="col-sm-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="feature-inner">
+                            <div class="icon-wrapper">
+                                <i class="{{conteudo.imagem}}"></i>
+                            </div>
+                            <h2>{{conteudo.titulo}}</h2>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+</section>

@@ -2,14 +2,20 @@
 <div class="page-header">
     <div class="container-fluid">
         <div class="pull-right">
-            
-                <button type="submit" class="btn btn-red"><i class="fa fa-save"></i></button>
-                <a href="clientes" class="btn btn-default"><i class="fa fa-reply"></i></a>
-               
+            {% if page != 'index'%}
 
 
-                <a href="novoCliente" class=" btn btn-red"><i class="fa fa-plus"></i></a>
-               
+                {% if page != 'list' %}
+                    <button type="submit" class="btn btn-red"><i class="fa fa-save"></i></button>
+                    <a href="clientes" class="btn btn-default"><i class="fa fa-reply"></i></a>
+
+                {% endif %}
+                {% if page != 'edit' %}
+                    <a href="novoCliente" class=" btn btn-red"><i class="fa fa-plus"></i></a>
+
+                {% endif %}
+            {% endif %}
+
         </div>
         <h1>{{titulo}}</h1>
         <ul class="breadcrumb">

@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace Adm\Models\clientes;
+namespace Adm\models\clientes;
 
 use Lib\cadastro\Cadastro;
 use PDO;

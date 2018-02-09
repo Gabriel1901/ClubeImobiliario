@@ -1,6 +1,6 @@
 <?php
 
-namespace Adm\Models\login;
+namespace Adm\models\login;
 
 use Lib\conexao\Conexao;
 

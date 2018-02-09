@@ -29,6 +29,7 @@ class LoginController extends Controller {
 
 
         print $this->twig->render('login/index.twig', array(
+            'titulo' => 'Login'
         ));
     }
 

@@ -1,0 +1,54 @@
+<section id="o-credito-fantastico" class="responsive">
+    <div class="vertical-center" id="action">
+        <div class="container">
+            <div class="row">
+                <div class="action take-tour">
+                    <div class="col-sm-12 wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 300ms; animation-name: fadeInLeft;">
+                        {% for modTitulo in modTitulos %}
+                            {% if  modTitulo.modulos_id == 3 %}
+                                <br><center><h1 class="title">{{modTitulo.titulo}}</h1>
+                                    <h4>  É  um sistema de compra programada que você pode utilizar por tempo indeterminado enquanto
+                                        durarem seus créditos e fazer de qualquer lugar que tiver uma conexão de internet.</h4></center>
+                                    {% endif %}
+                                {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+
+            {% for key, conteudo in conteudos %}
+                {% if  conteudo.modulos_id == 3 %}
+                    {% if  key % 2 %}
+                        <div class="single-features">
+                            <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                                <img src="images/{{conteudo.imagem}}" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                                <h2>{{conteudo.titulo}}</h2>
+                                <P>{{conteudo.descricao}}</P>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="single-features">
+                            <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                                <h2>{{conteudo.titulo}}</h2>
+                                <P>{{conteudo.descricao}}</P>
+                            </div>
+                            <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                                <img src="images/{{conteudo.imagem}}" class="img-responsive" alt="">
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

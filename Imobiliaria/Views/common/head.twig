@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>CDB - Clube Imobili&aacute;rio</title>
+        <title>{{empresa.nome}}</title>
         <link rel="stylesheet" href="site/css/menu.css">
         <link rel="stylesheet" href="site/css/slider.css">
         <link href="site/css/customs.css" rel="stylesheet">
         <link href="site/css/bootstrap.min.css" rel="stylesheet">
         <link href="site/css/layout.css" rel="stylesheet">
         <link href="site/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="shortcut icon" href="../images/favicon.png">
+        <link rel="shortcut icon" href="../images/{{empresa.imagem_ico}}">
     <body>
 
         <section id="header" class="header">
@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img src="images/logoClube.png"> 
+                        <img src="images/{{empresa.logo_site}}" alt="{{empresa.nome}}"> 
                         <div>
                         </div>
                     </div>
@@ -43,23 +43,9 @@
             </div>
 
         </section>
-    {% block slider %}{% endblock %}
+    {% block content %}{% endblock %}
 
-{% block diferenciais %}{% endblock %}
 
-{% block oCreditoFantastico %}{% endblock %}
-
-{% block loteria %}{% endblock %}
-
-{% block as10Vantagens %}{% endblock %}
-
-{% block oImportante %}{% endblock %}
-
-{% block bonus %}{% endblock %}
-
-{% block ofertas %}{% endblock %} 
-
-{# {% block confichaDeCadastrotent %}{% endblock %} #}
 
 
 <footer class="slider-custom">
@@ -67,8 +53,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="copyright-text text-center">
-                    <center>&copy; Casa Dos Banners 2017. Todos os Direitos Reservados.</center>
-                    <center>Crafted by <a target="_blank" href="http://criaative.com.br/">Criaative</a></center>
+                    <center>&copy; {{empresa.nome}} 2017. Todos os Direitos Reservados.</center>
+                    <center>Crafted by <a target="_blank" href="{{empresa.dominio}}">{{empresa.nome}}</a></center>
 
                 </div>
             </div>
