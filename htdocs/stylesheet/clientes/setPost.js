@@ -1,8 +1,14 @@
+$(document).ready(function () {
+
+    $('#telefone').mask('(00) 0000-0000');
+    $('#celular').mask('(00) 00000-0000');
+
+});
 var url = $(location).attr('href');
 
 var getId = url.split('=');
 
-
+var route = 'http://localhost/';
 if (getId[1]) {
     var id = getId[1];
 } else {
@@ -32,7 +38,7 @@ $(function () {
 
 
 
-        $.post('../clientes/setPost&clientes=' + id, {
+        $.post(route+'adm/clientes/setPost&clientes=' + id, {
             cdb_id: cdb_id,
             contato: contato,
             nome: nome,
@@ -51,7 +57,7 @@ $(function () {
 
 
           window.alert(retorno);
-          window.location = "clientes";
+         window.location = route+"adm/clientes";
 
 
         });

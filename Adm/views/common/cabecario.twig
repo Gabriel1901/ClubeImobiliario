@@ -4,14 +4,15 @@
         <div class="pull-right">
             {% if page != 'index'%}
 
-
-                {% if page != 'list' %}
+{% set pages = page|split('_') %}
+                {% if pages[0] != 'list' %}
                     <button type="submit" class="btn btn-red"><i class="fa fa-save"></i></button>
-                    <a href="clientes" class="btn btn-default"><i class="fa fa-reply"></i></a>
+                    <a href="{{route}}adm/clientes" class="btn btn-default"><i class="fa fa-reply"></i></a>
 
                 {% endif %}
-                {% if page != 'edit' %}
-                    <a href="novoCliente" class=" btn btn-red"><i class="fa fa-plus"></i></a>
+                {% if pages[0] != 'edit' %}
+                    
+                    <a href="{{route~classe~'new'~pages[1]}}" class=" btn btn-red"><i class="fa fa-plus"></i></a>
 
                 {% endif %}
             {% endif %}

@@ -1,152 +1,72 @@
 <section id="as-10-vantagens" class="container"> 
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="page-header">As 10 Vantagens</h2>
-            </div>
-            <div class="col-sm-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="1200ms">
-                <div class="feature-inner">
-                    <p align="justify">A dedicação de 10 anos na comunicação visual, e este ano aconteceu uma coisa percebemos que já atendemos mais de 1000 imobiliárias pelo brasil com diversos produtos e serviços, e estamos comprometidos em melhorar e revolucionar nosso atendimento, e agora resolvemos que vamos nos tornar a mais especializada  no mercado imobiliário, criando VALOR para nosso Cliente você e para a Casa dos Banners estruturando e focando somente na área de imóveis trabalhando junto com imobiliárias e construtoras.</p>
-                    <p align="justify">Como disse anteriormente queremos criar uma parceria, e ter uma maior dinâmica com nossos clientes, ter procesos melhor definidos, poder dar uma melhor assistência e consultoria, apresentar produtos de melhor qualidade.</p>
-                    <p align="justify">E antes de tomar esta decisão, pensei muito nisto para apresentar este produto. </p>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <hr>
-                <ul id="tab2" class="nav nav-pills">
-                    <li class="active"><a href="#tab2-item1" data-toggle="tab">Identidade</a></li>
-                    <li><a href="#tab2-item2" data-toggle="tab">Estabilidade</a></li>
-                    <li><a href="#tab2-item3" data-toggle="tab">Parcelar</a></li>
-                    <li><a href="#tab2-item4" data-toggle="tab">Fluxo de Caixa</a></li>
-                    <li><a href="#tab2-item5" data-toggle="tab">Estoque</a></li>
-                    <li><a href="#tab2-item6" data-toggle="tab">Embalagem</a></li>
-                    <li><a href="#tab2-item7" data-toggle="tab">Valores</a></li>
-                    <li><a href="#tab2-item8" data-toggle="tab">Instalação</a></li>
-                    <li><a href="#tab2-item9" data-toggle="tab">Garantia</a></li>
-                    <li><a href="#tab2-item10" data-toggle="tab">Entrega</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane fade active in" id="tab2-item1">
+    <div class="row">
+        <div class="col-md-12">
+            {% for modTitulo in modTitulos %}
+                {% if  modTitulo.modulos_id == 5 %}
+                    <h2 class="page-header">{{modTitulo.titulo}}</h2>
+                {% endif %}
+            {% endfor %}
 
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <img src="images/vantagens/identidade.jpg" class="img-responsive" alt="">
-
-                            </div>   
-                            <div class="col-md-6">
-                                <p>Preparar e antecipar para nosso cliente uma identidade visual gratuita sobre todos os produtos utilizados por você para que possamos agilizar a etapa de preparação de artes, que normalmente tem consumido um tempo muito grande e as vezes esquecemos de algum detalhe ou até mesmo deixamos passar algum erro.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="tab2-item2">
-
-                        <div class="col-md-6">
-
-
-                            <img src="images/vantagens/estabilidade.jpg"" class="img-responsive" alt="">
-
-
-                        </div>   
-                        <div class="col-md-6"> <p>Estabilidade e garantia nos valores dos produtos por mais de um ano sem mudanças ou surpresas até mesmo sair fora do seu orçamento
-                                .</p></div>
-                    </div>
-                    <div class="tab-pane fade" id="tab2-item3">
-
-                        <div class="col-md-6">
-
-                            <img src="images/vantagens/parcelamento.jpg"" class="img-responsive" alt="">
-
-
-                        </div>   
-                        <div class="col-md-6"><p>Poder parcelar ou planejar seus investimentos em publicidade dos imóveis
-                                .</p>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="tab2-item4">
-
-                        <div class="col-md-6">
-
-                            <img src="images/vantagens/fluxoDeCaixa.jpg"" class="img-responsive" alt="">
-
-                        </div>   
-                        <div class="col-md-6"> <p>Melhorar seu fluxo de caixa pois não precisa fazer compras de grandes quantidades para melhorar o valor da compra.</p>
-                        </div>
-
-                    </div>
-                    <div class="tab-pane fade" id="tab2-item5">
-
-                        <div class="col-md-6">
-
-                            <img src="images/vantagens/estoque.jpg"" class="img-responsive" alt="">
-
-
-                        </div>   
-                        <div class="col-md-6"><p>Otimizar estoques não precisar manter grandes estoques, nem espaço físico.</p>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="tab2-item6">
-
-                        <div class="col-md-6">
-
-                            <img src="images/vantagens/valores.jpg"" class="img-responsive" alt="">
-
-                        </div>   
-                        <div class="col-md-6"><p>Embalagem, faixas, banners e pvc sem em caixas identificando produto.</p>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="tab2-item7">
-
-                        <div class="col-md-6">
-
-                            <img src="images/vantagens/instalacoes.jpg"" class="img-responsive" alt="">
-
-
-                        </div>   
-                        <div class="col-md-6"> <p>Valores pré-definido de todo os produtos que utiliza.</p>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="tab2-item8">
-
-                        <div class="col-md-6">
-
-                            <img src="images/vantagens/garantia.jpg"" class="img-responsive" alt="">
-
-
-                        </div>   
-                        <div class="col-md-6"> <p>Instalação. retirada e manutenção de suas placas com preços reduzidos.</p>
-                        </div>
-
-                    </div>
-                    <div class="tab-pane fade" id="tab2-item9">
-
-                        <div class="col-md-6">
-
-                            <img src="images/vantagens/entrega.jpg"" class="img-responsive" alt="">
-
-
-                        </div>   
-                        <div class="col-md-6"> <p>Garantia e compromisso com prazos estipulados ou negociados, placas com maior e melhor valor agregado.</p>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="tab2-item10">
-
-                        <div class="col-md-6">
-
-                            <img src="images/vantagens/valor.jpg"" class="img-responsive" alt="">
-
-
-                        </div>   
-                        <div class="col-md-6"><p>Entrega programada conforme necessidade do cliente com datas e quantidades definidas.</p>
-                        </div>
-                    </div>
-                </div>
-
-
+        </div>
+        <div class="col-sm-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="1200ms">
+            <div class="feature-inner">
+                <p align="justify">A dedicação de 10 anos na comunicação visual, e este ano aconteceu uma coisa percebemos que já atendemos mais de 1000 imobiliárias pelo brasil com diversos produtos e serviços, e estamos comprometidos em melhorar e revolucionar nosso atendimento, e agora resolvemos que vamos nos tornar a mais especializada  no mercado imobiliário, criando VALOR para nosso Cliente você e para a Casa dos Banners estruturando e focando somente na área de imóveis trabalhando junto com imobiliárias e construtoras.</p>
+                <p align="justify">Como disse anteriormente queremos criar uma parceria, e ter uma maior dinâmica com nossos clientes, ter procesos melhor definidos, poder dar uma melhor assistência e consultoria, apresentar produtos de melhor qualidade.</p>
+                <p align="justify">E antes de tomar esta decisão, pensei muito nisto para apresentar este produto. </p>
             </div>
         </div>
-    </section>
+        <div class="col-md-12">
+            <hr>
+            <ul id="tab2" class="nav nav-pills">
+
+                   
+                {% for conteudo in conteudos%}
+                   
+                    {% set active = "" %}
+
+                    {% if  conteudo.order == 1 %}
+                        {% set active = 'active' %}
+                    {% endif %}
+                    {% if  conteudo.modulos_id == 5 %}
+                        <li class="{{active}}"><a href="#tab2-item{{conteudo.order}}" data-toggle="tab">{{conteudo.titulo}}</a></li>
+
+                    {% endif %}
+                    
+                {% endfor %}
+
+            </ul>
+            <div class="tab-content">
+
+                {% for conteudo in conteudos %}
+                    {% set active = "" %}
+                    {% if  conteudo.modulos_id == 5 %}
+                        {% if  conteudo.order == 1 %}
+                            {% set active = 'active' %}
+                        {% endif %}
+
+
+                        <div class="tab-pane fade {{active}} in" id="tab2-item{{conteudo.order}}">
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <img src="images/{{conteudo.imagem}}" class="img-responsive" alt="">
+                                </div>   
+                                <div class="col-md-6">
+                                    <p>{{conteudo.descricao}}</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+
+
+        </div>
+    </div>
+</section>

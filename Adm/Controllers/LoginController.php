@@ -21,7 +21,7 @@ class LoginController extends Controller {
     private $usuarioModel;
 
     public function index() {
-
+       
         $this->logar();
     }
 
@@ -62,7 +62,7 @@ class LoginController extends Controller {
 
         session_destroy();
 
-        header("location: ../");
+        header("location: ../../");
     }
 
 }

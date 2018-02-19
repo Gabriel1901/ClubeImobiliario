@@ -3,6 +3,7 @@
 namespace adm;
 
 define('img', 'public/images/');
+define('route', 'http://localhost/');
 
 
 

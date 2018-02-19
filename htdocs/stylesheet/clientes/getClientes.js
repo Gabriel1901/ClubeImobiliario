@@ -4,9 +4,9 @@ var getId = url.split('=');
 if(getId[1]){
     var id = getId[1];
 }
+var route = 'http://localhost/';
 
-
-$.getJSON('../clientes/getAll', function (retorno) {
+$.getJSON(route+'adm/clientes/getAll', function (retorno) {
 
     retorno.forEach(function (obj, idx) {
 

@@ -105,6 +105,7 @@ abstract class Cadastro {
     }
 
     public function selectAll($tab, $status) {
+        
         $stat = '';
         if ($status) {
             $stat = " where status=" . $status;

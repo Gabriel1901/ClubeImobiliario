@@ -21,13 +21,14 @@
     {% endfor %}
 
 </style>
+
 <div id="slider" class="slider-container">
     <div class="slider-control left inactive"></div>
     <div class="slider-control right"></div>
     <ul class="slider-pagi"></ul>
     <div class="slider">
+        
         {% for key, slider in sliders %}
-
 
             <div class="slide slide-{{ key }} active">
                 <div class="slide__bg"></div>
@@ -41,9 +42,8 @@
                     </div>
                 </div>
             </div>
+                    
         {% endfor %}
-
-
 
     </div>
 </div>

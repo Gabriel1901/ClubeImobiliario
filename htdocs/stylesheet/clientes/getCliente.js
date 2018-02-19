@@ -1,14 +1,11 @@
 
 function getCliente(id) {
 
+var route = 'http://localhost/';
 
-
-
-
-    $.getJSON('../index.php?url=clientes/getAll', function (retorno) {
+    $.getJSON(route+'adm/clientes/getAll', function (retorno) {
 
         retorno.forEach(function (obj, idx) {
-
 
             if (obj.clientes_id == id) {
 
@@ -16,7 +13,7 @@ function getCliente(id) {
                 $('#cdb_id').html(obj.clientes_id);
                 $('#contato').html(obj.contato);
                 $('#nome').html(obj.nome);
-                $('i#nome_fantasia').html(obj.nome_fantasia);
+                $('#nome_fantasia').html(obj.nome_fantasia);
                 $('#email').html(obj.email);
                 $('#telefone').html(obj.telefone);
                 $('#celular').html(obj.celular);

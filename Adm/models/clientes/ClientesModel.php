@@ -122,7 +122,9 @@ class ClientesModel extends Cadastro {
     }
 
     public function selectAllCliente() {
-        $clientes = $this->selectAll('clientes');
+        
+      
+        $clientes = $this->selectAll('clientes', NULL);
 
         return $clientes;
     }

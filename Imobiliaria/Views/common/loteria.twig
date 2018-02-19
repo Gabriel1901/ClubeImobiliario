@@ -13,7 +13,7 @@
 
                                         <h2>
                                             <center>
-                                                <img src="images/credito-fantastico.png" class="img-responsive" alt=""><br>Imagine que você comprou um bilhete de loteria.</center><center class="custom-color-clique-aqui"> <br>(Clique aqui) </center></h2>
+                                                <img src="images/credito-fantastico.png" class="img-responsive" alt=""><br> {% for modTitulo in modTitulos %} {% if  modTitulo.modulos_id == 4 %}{{modTitulo.titulo}} {% endif %} {% endfor %}</center><center class="custom-color-clique-aqui"> <br>(Clique aqui) </center></h2>
                                     </a>
                                 </h4>
                             </div>

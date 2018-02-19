@@ -2,11 +2,14 @@
 
 namespace Lib\controllers;
 
+use Adm;
 use Adm\Models\get\CadastroModel;
+use Adm\Models\clientes\ClientesModel;
 
 use PDO;
 
 require_once '../vendor/autoload.php';
+require_once '../autoload.php';
 
 /**
  * Description of Controllers
@@ -23,17 +26,18 @@ abstract class Controllers {
     private $viewFoolder;
     private $loader;
     public $get;
-    
+    public $clientes;
 
     public function __construct() {
 
-
+        $this->clientes = new ClientesModel();
         $this->get = new CadastroModel();
-   
+
 
         $url = isset($_GET['url']) ? $_GET['url'] : 'Imobiliaria';
         $this->getUrl(isset($url) ? $url : 'Imobiliaria');
-        $this->viewFoolder = '../' . ucfirst($this->controller) . '/views';
+        
+        $this->viewFoolder = '../' . ucfirst($this->controller) . '/Views';
         $this->loader = new \Twig_Loader_Filesystem($this->viewFoolder);
         $this->twig = new \Twig_Environment($this->loader);
     }
