@@ -47,7 +47,7 @@ class ClientesController extends Controller {
 
         print $this->twig->render('clientes/editar.twig', array(
                     'empresa' => $this->getDb('empresa', NULL)[0],
-                    'titulo' => 'Editar Clientes',
+                    'titulo' => 'Editar Cliente',
                     'page' => 'edit_cliente',
                     'route' => route
         ));
@@ -56,7 +56,7 @@ class ClientesController extends Controller {
     public function newCliente() {
         print $this->twig->render('clientes/editar.twig', array(
                     'empresa' => $this->getDb('empresa', NULL)[0],
-                    'titulo' => 'Novo Clientes',
+                    'titulo' => 'Novo Cliente',
                     'page' => 'new_cliente',
                     'route' => route
         ));

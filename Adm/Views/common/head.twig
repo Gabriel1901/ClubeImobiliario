@@ -4,14 +4,14 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-            {% set titulos = titulo %}
+        {% set titulos = titulo %}
         {% if page !=  'index' %}
             {% set titulos = 'Painel / '~ titulo %}
 
         {% endif %}
 
         <title>{{ titulos }}</title>
-        
+
         <link rel="shortcut icon" type="image/png" href="//localhost/images/{{empresa.imagem_ico}}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
         <script type="text/javascript" src="{{route}}javascript/jquery/jquery-2.1.1.min.js"></script>
@@ -38,15 +38,16 @@
         {#  fim  #}
 
         <!-- Cadastro de clientes -->
+        {% set pages = page|split('_') %}
+        {% if pages[1] == 'cliente' %}
+
+            <script src="{{route}}stylesheet/clientes/getClientes.js" type="text/javascript"></script>
+            <script src="{{route}}stylesheet/clientes/setPost.js" type="text/javascript"></script>
 
 
-        <script src="{{route}}stylesheet/clientes/getClientes.js" type="text/javascript"></script>
-        <script src="{{route}}stylesheet/clientes/setPost.js" type="text/javascript"></script>
-
-
-
-        <script src="{{route}}stylesheet/clientes/getListaClientes.js" type="text/javascript"></script>
-        <script src="{{route}}stylesheet/clientes/getCliente.js" type="text/javascript"></script>
+            <script src="{{route}}stylesheet/clientes/getListaClientes.js" type="text/javascript"></script>
+            <script src="{{route}}stylesheet/clientes/getCliente.js" type="text/javascript"></script>
+        {% endif%}
 
         <!-- Fim Cadastro de clientes -->
     </head>

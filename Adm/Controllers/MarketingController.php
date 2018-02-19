@@ -37,7 +37,7 @@ class MarketingController extends Controller {
 
     public function newCampanha() {
 
-        print $this->twig->render('marketing/fichaDeCadastro.twig', array(
+        print $this->twig->render('marketing/novaCampanha.twig', array(
                     'empresa' => $this->getDb('empresa', NULL)[0],
                     'titulo' => 'Campanha',
                     'page' => 'new_campanha',
