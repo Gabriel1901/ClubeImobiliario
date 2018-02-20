@@ -72,3 +72,13 @@
 /catalina_stop.bat
 /apache_stop.bat
 /apache_start.bat
+/xampp_shell.bat
+/xampp-control.ini
+/xampp-control.exe
+/test_php.bat
+/service.exe
+/ctlscript.bat
+/mysql_start.bat
+/mysql_stop.bat
+/catalina_service.bat
+/RELEASENOTES
