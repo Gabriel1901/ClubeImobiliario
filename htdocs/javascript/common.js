@@ -38,7 +38,7 @@ $(document).ready(function() {
 	});
 
 	// tooltips on hover
-	$('[data-toggle=\'tooltip\']').tooltip({container: 'body', html: true});
+	//$('[data-toggle=\'tooltip\']').tooltip({container: 'body', html: true});
 
 	// Makes tooltips work on ajax generated content
 	$(document).ajaxStop(function() {
@@ -89,7 +89,7 @@ $(document).ready(function() {
 	$('#menu a[href=\'' + sessionStorage.getItem('menu') + '\']').parents('li').addClass('active');
 	
 	// Image Manager
-	$(document).on('click', 'a[data-toggle=\'image\']', function(e) {
+	$(document).on('click', 'a[data-toggle=\'images\']', function(e) {
 		var $element = $(this);
 		var $popover = $element.data('bs.popover'); // element has bs popover?
 

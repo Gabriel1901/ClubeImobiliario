@@ -62,7 +62,7 @@ class LoginController extends Controller {
 
         session_destroy();
 
-        header("location: ../../");
+        header("location: ".route);
     }
 
 }

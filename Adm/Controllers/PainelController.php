@@ -10,10 +10,10 @@ session_start();
 if (!(isset($_SESSION['usuario']) && $_SESSION['usuario'] == '2072525faf0effb700b7d896b7468ff2500ea1ac')) {
 
 
-  header("location: adm/login");
+    header("location: adm/login");
 
-  exit;
-  } 
+    exit;
+}
 
 require_once '../autoload.php';
 
@@ -21,16 +21,19 @@ class PainelController extends Controller {
 
     public function index() {
 
-       
+
+        $this->painel();
+    }
+
+    public function painel() {
+
+
         print $this->twig->render('painel/index.twig', array(
                     'empresa' => $this->getDb('empresa', NULL)[0],
                     'titulo' => 'Painel de Controle',
-                    'page' => 'index'
+                    'page' => 'index',
+                    'route' => route
         ));
     }
-
-
-  
-
 
 }
