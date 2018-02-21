@@ -8,7 +8,7 @@ $rota = isset($_GET['url']) ? explode("/", $_GET['url']) : "";
 $controllers = isset($rota[0]) && $rota[0] == 'adm' ? 'Painel' : '';
 
 if (isset($rota[1])) {
-    $controllers = ucfirst($rota[1]);
+    $controllers = $rota[1] != NULL ? ucfirst($rota[1]) : 'painel';
     $rota[0] = 'Adm';
 }
 

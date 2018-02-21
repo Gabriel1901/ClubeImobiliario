@@ -1,6 +1,7 @@
 <?php
 
-namespace adm\models\usuario;
+namespace Adm\Models\usuario;
+
 
 use \Lib\conexao\Conexao;
 use \PDO;

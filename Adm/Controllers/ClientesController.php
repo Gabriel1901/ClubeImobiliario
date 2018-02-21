@@ -7,7 +7,7 @@ session_start();
 if (!(isset($_SESSION['usuario']) && $_SESSION['usuario'] == '2072525faf0effb700b7d896b7468ff2500ea1ac')) {
 
 
-    header("location: login");
+    header("location: " .route."adm/login");
 
     exit;
 }

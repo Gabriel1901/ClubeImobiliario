@@ -5,7 +5,8 @@ namespace Lib\controllers;
 use Adm;
 use Adm\Models\get\CadastroModel;
 use Adm\Models\clientes\ClientesModel;
-
+use Adm\Models\marketing\CampanhaModel;
+use Adm\Models\marketing\EmailsModels;
 use PDO;
 
 require_once '../vendor/autoload.php';
@@ -27,16 +28,20 @@ abstract class Controllers {
     private $loader;
     public $get;
     public $clientes;
+    public $campanhas;
+    public $emails;
 
     public function __construct() {
 
+        $this->campanhas = new CampanhaModel();
+        $this->emails = new EmailsModels();
         $this->clientes = new ClientesModel();
         $this->get = new CadastroModel();
 
 
         $url = isset($_GET['url']) ? $_GET['url'] : 'Imobiliaria';
         $this->getUrl(isset($url) ? $url : 'Imobiliaria');
-        
+
         $this->viewFoolder = '../' . ucfirst($this->controller) . '/Views';
         $this->loader = new \Twig_Loader_Filesystem($this->viewFoolder);
         $this->twig = new \Twig_Environment($this->loader);

@@ -3,7 +3,7 @@
 namespace Adm\Controllers;
 
 use Systema\Controller;
-use Adm\models\usuario\UsuarioModel;
+use Adm\Models\usuario\UsuarioModel;
 
 /*
  * Classe para validar o acesso do usuário
@@ -21,7 +21,7 @@ class LoginController extends Controller {
     private $usuarioModel;
 
     public function index() {
-       
+
         $this->logar();
     }
 
@@ -29,7 +29,8 @@ class LoginController extends Controller {
 
 
         print $this->twig->render('login/index.twig', array(
-            'titulo' => 'Login'
+                    'titulo' => 'Login',
+                    'route' => route
         ));
     }
 
@@ -62,7 +63,7 @@ class LoginController extends Controller {
 
         session_destroy();
 
-        header("location: ".route);
+        header("location: " . route);
     }
 
 }

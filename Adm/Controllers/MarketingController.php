@@ -7,7 +7,7 @@ session_start();
 if (!(isset($_SESSION['usuario']) && $_SESSION['usuario'] == '2072525faf0effb700b7d896b7468ff2500ea1ac')) {
 
 
-    header("location: login");
+    header("location: " . route . "adm/login");
 
     exit;
 }
@@ -50,9 +50,23 @@ class MarketingController extends Controller {
         print $this->twig->render('marketing/fichaDeCadastro.twig', array(
                     'empresa' => $this->getDb('empresa', NULL)[0],
                     'titulo' => 'Painel de Controle',
-                    'page' => 'index',
+                    'page' => 'index_marketing',
                     'route' => route
         ));
+    }
+
+    public function setPostEmail() {
+
+
+        $posts = $_POST;
+      
+        $this->emails->setEmails($posts);
+    }
+    
+    public function getAll() {
+       $emails= $this->getDb('campanhas_emails', NULL);
+        
+        echo json_encode($emails);
     }
 
 }

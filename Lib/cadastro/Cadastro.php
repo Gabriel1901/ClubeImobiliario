@@ -39,8 +39,7 @@ abstract class Cadastro {
         $sql = "INSERT INTO " . db_p . $tab . "
                 (" . $keys . ") 
                 VALUES (" . $value . ");";
-
-
+    
         $insert = $this->con->pdo()->prepare($sql);
         $insert->execute();
     }
@@ -81,7 +80,6 @@ abstract class Cadastro {
     }
 
     public function inserts($post, $tab) {
-
 
 
 
